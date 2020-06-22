@@ -3,7 +3,7 @@
   "@context": "http://daisy.github.io/ace/ace-report-1.0.jsonld",
   "dct:title": "Ace Report",
   "dct:description": "Report on automated accessibility checks for EPUB",
-  "dct:date": "6/22/2020, 8:19:49 AM",
+  "dct:date": "6/22/2020, 9:12:58 AM",
   "earl:assertedBy": {
     "@type": "earl:software",
     "doap:name": "DAISY Ace",
@@ -64,7 +64,7 @@
     "hasPageBreaks": true
   },
   "earl:testSubject": {
-    "url": "../JoM-V1.kepub.epub",
+    "url": "../JoM-V001.kepub.epub",
     "metadata": {
       "dc:title": "Journal of Mammalogy Volume 1",
       "dc:description": "1919–1920 Numbers 1–5 plus Supplemental content",
@@ -106,7 +106,7 @@
         "noSoundHazard",
         "noMotionSimulationHazard"
       ],
-      "dcterms:modified": "2020-06-22T15:19:43Z"
+      "dcterms:modified": "2020-06-22T16:12:52Z"
     },
     "links": {}
   },
