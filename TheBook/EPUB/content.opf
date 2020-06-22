@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package unique-identifier="prng-uuid" version="3.0" xml:lang="en-US" xmlns="http://www.idpf.org/2007/opf">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:title>Journal of Mammalogy Volume 1</dc:title>
+    <dc:description>1919–1920 Numbers 1–5 plus Supplemental content</dc:description>
+    <dc:type>Natural History</dc:type>
+    <dc:language>en-US</dc:language>
+    <dc:publisher>Pipfrosch Press</dc:publisher>
+    <dc:date>2020-06-01</dc:date>
+    <dc:creator id="author0">American Society of Mammalogists</dc:creator>
+    <meta property="role" refines="#author0" scheme="marc:relators">aut</meta>
+    <dc:creator id="author1">Pipfrosch Press</dc:creator>
+    <meta property="role" refines="#author1" scheme="marc:relators">aut</meta>
+    
+    <dc:contributor id="OGeditor">N. Hollister</dc:contributor>
+    <meta property="role" refines="OGeditor" scheme="marc:relators">edt</meta>
+    
+    <dc:contributor id="editor0">Michael A. Peters</dc:contributor>
+    <meta property="role" refines="editor0" scheme="marc:relators">edt</meta>
+    <meta property="role" refines="editor0" scheme="marc:relators">ill</meta>
+    <meta property="role" refines="editor0" scheme="marc:relators">prg</meta>
+    <meta property="role" refines="editor0" scheme="marc:relators">ctb</meta>
+    <meta property="role" refines="editor0" scheme="marc:relators">pht</meta>
+    <!-- article authors -->
+    <dc:contributor id="author2">Glover M. Allen</dc:contributor>
+    <meta property="role" refines="author2" scheme="marc:relators">ctb</meta>
+    <dc:contributor id="author3">C. Hart Merriam</dc:contributor>
+    <meta property="role" refines="author3" scheme="marc:relators">ctb</meta>
+    <dc:contributor id="author4">Lee Raymond Dice</dc:contributor>
+    <meta property="role" refines="author4" scheme="marc:relators">ctb</meta>
+    <meta property="role" refines="author4" scheme="marc:relators">pht</meta>
+    <dc:contributor id="author5">J. A. Allen</dc:contributor>
+    <meta property="role" refines="author5" scheme="marc:relators">ctb</meta>
+    <dc:contributor id="author6">Vernon Bailey</dc:contributor>
+    <meta property="role" refines="author6" scheme="marc:relators">ctb</meta>
+    <dc:contributor id="author7">Wilfred H. Osgood</dc:contributor>
+    <meta property="role" refines="author7" scheme="marc:relators">ctb</meta>
+    <dc:contributor id="author8">Arthur H. Howell</dc:contributor>
+    <meta property="role" refines="author8" scheme="marc:relators">ctb</meta>
+    
+    <!-- visual -->
+    <dc:contributor id="cover0">Tyus D. Williams</dc:contributor>
+    <meta property="role" refines="cover0" scheme="marc:relators">pht</meta>
+    <dc:contributor id="logo0">Nicole Wilson</dc:contributor>
+    <meta property="role" refines="logo0" scheme="marc:relators">ill</meta>
+    <dc:identifier id="prng-uuid">2170060d-e36c-49b7-8640-e501d682ef45</dc:identifier>
+    <meta property="marc:scheme" refines="#prng-uuid">uuid</meta>
+    <meta property="dcterms:modified">2020-04-15T08:15:56Z</meta>
+    <dc:source id="src-issn">0022-2372</dc:source>
+    <meta refines="#src-issn" property="identifier-type" scheme="onix:codelist5">01</meta>
+    <!-- a11y -->
+    <meta property="schema:accessibilitySummary">This publication attempts to conform to WCAG 2.0 Level AA. Validation by an accessibility expert has not yet been done.</meta>
+    <meta property="schema:accessMode">textual</meta>
+    <meta property="schema:accessMode">visual</meta>
+    <meta property="schema:accessModeSufficient">textual,visual</meta>
+    <meta property="schema:accessModeSufficient">textual</meta>
+    <meta property="schema:accessibilityFeature">structuralNavigation</meta>
+    <meta property="schema:accessibilityHazard">noFlashingHazard</meta>
+    <meta property="schema:accessibilityHazard">noSoundHazard</meta>
+    <meta property="schema:accessibilityHazard">noMotionSimulationHazard</meta>
+    <!-- end a11y -->
+  </metadata>
+  <manifest>
+    <item href="CoverImage.jpg" id="cover-image" media-type="image/jpeg" properties="cover-image"/>
+    <item href="ToC.xhtml" id="ToC" media-type="application/xhtml+xml" properties="nav"/>
+  <!-- PLS -->
+    <item href="pronunciation.pls" id="pls-lexicon" media-type="application/pls+xml"/>
+  <!-- CSS -->
+    <item href="css/fonts.css" id="css__fonts" media-type="text/css"/>
+    <item href="css/common.css" id="css__common" media-type="text/css"/>
+    <item href="css/title.css" id="css__title" media-type="text/css"/>
+    <item href="css/frontmatter.css" id="css__frontmatter" media-type="text/css"/>
+    <item href="css/backmatter.css" id="css__backmatter" media-type="text/css"/>
+    <item href="css/index.css" id="css__index" media-type="text/css"/>
+    <!-- item href="css/table.css" id="css_table" media-type="text/css"/ -->
+    <item href="css/svg.css" id="css_svg" media-type="text/css"/>
+    <!-- item href="css/mathml.css" id="css_mathml" media-type="text/css"/ -->
+    <item href="css/litcited.css" id="css_litcited" media-type="text/css"/>
+    <item href="css/changelog.css" id="css_changelog" media-type="text/css"/>
+    <!-- alternative css -->
+    <item href="css/noitalics.css" id="css__noitalics" media-type="text/css"/>
+    <item href="css/a11y.css" id="css__a11y" media-type="text/css"/>
+  <!-- fonts -->
+    <item href="fonts/ClearSans-Regular-wlatin.ttf" id="font.ClearSans.Regular" media-type="font/otf"/>
+    <item href="fonts/ClearSans-Bold-wlatin.ttf" id="font.ClearSans.Bold" media-type="font/otf"/>
+    <item href="fonts/ClearSans-Italic-wlatin.ttf" id="font.ClearSans.Italic" media-type="font/otf"/>
+    <item href="fonts/ClearSans-BoldItalic-wlatin.ttf" id="font.ClearSans.BoldItalic" media-type="font/otf"/>
+    <item href="fonts/ClearSans-LICENSE-2.0.txt" id="font.ClearSans.LICENSE" media-type="text/plain"/>
+    <item href="fonts/ComicNeue-Regular-wlatin.otf" id="font.ComicNeue.Regular" media-type="font/otf"/>
+    <item href="fonts/ComicNeue-Bold-wlatin.otf" id="font.ComicNeue.Bold" media-type="font/otf"/>
+    <item href="fonts/ComicNeue-LICENSE.txt" id="font.ComicNeue.LICENSE" media-type="text/plain"/>
+    <item href="fonts/FiraMono-Medium-wlatin.ttf" id="font.FiraMono.Medium" media-type="font/otf"/>
+    <item href="fonts/FiraMono-Bold-wlatin.ttf" id="font.FiraMono.Bold" media-type="font/otf"/>
+    <item href="fonts/FiraMono-LICENSE.txt" id="font.FiraMono.LICENSE" media-type="text/plain"/>
+  <!-- frontmatter -->
+    <item href="TitlePage.xhtml" id="TitlePage" media-type="application/xhtml+xml" properties="svg"/>
+    <item href="pubdates.xhtml" id="pubdates" media-type="application/xhtml+xml"/>
+    <item href="ToC4spine.xhtml" id="toc4spine" media-type="application/xhtml+xml"/>
+  <!-- 1919 November Issue -->
+    <!-- plates -->
+    <item href="1919Nov/plates/plate1fig1.jpg" id="nov1919.plates.plate1fig1" media-type="image/jpeg"/>
+    <item href="1919Nov/plates/plate1fig2.jpg" id="nov1919.plates.plate1fig2" media-type="image/jpeg"/>
+    <item href="1919Nov/plates/plate2fig1.jpg" id="nov1919.plates.plate2fig1" media-type="image/jpeg"/>
+    <item href="1919Nov/plates/plate2fig2.jpg" id="nov1919.plates.plate2fig2" media-type="image/jpeg"/>
+    <!-- end plates -->
+    <item href="1919Nov/IssueCover.xhtml" id="nov1919.cover" media-type="application/xhtml+xml" properties="svg"/>
+    <item href="1919Nov/general.xhtml" id="nov1919.general" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/recentlit.xhtml" id="nov1919.recentlit" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/editorial.xhtml" id="nov1919.editorial" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/bylaws.xhtml" id="nov1919.bylaws" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/asm.xhtml" id="nov1919.asm" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/IssueToC.xhtml" id="nov1919.ToC" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/bats_mount_whitney.xhtml" id="nov1919.bats-whitney" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/recognition_of_species.xhtml" id="nov1919.recspec" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/se_wa.xhtml" id="nov1919.sewa" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/plate1.xhtml" id="nov1919.plate1" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/plate2.xhtml" id="nov1919.plate2" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/se_wa-litcited.xhtml" id="nov1919.sewa-litcited" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/af_carnivora.xhtml" id="nov1919.afcar" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/nd_beaver.xhtml" id="nov1919.beaver" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/sa_mammals.xhtml" id="nov1919.samammals" media-type="application/xhtml+xml"/>
+    <item href="1919Nov/fox_squirrels.xhtml" id="nov1919.foxsquirrels" media-type="application/xhtml+xml"/>
+  <!-- 1920 February Issue -->
+    <item href="1920Feb/IssueCover.xhtml" id="feb1920.cover" media-type="application/xhtml+xml" properties="svg"/>
+    <item href="1920Feb/asm.xhtml" id="feb1920.asm" media-type="application/xhtml+xml"/>
+  
+  <!-- 1920 May Issue -->
+    <item href="1920May/IssueCover.xhtml" id="may1920.cover" media-type="application/xhtml+xml" properties="svg"/>
+    <item href="1920May/asm.xhtml" id="may1920.asm" media-type="application/xhtml+xml"/>
+  
+  <!-- 1920 Aug Issue -->
+    <item href="1920Aug/IssueCover.xhtml" id="aug1920.cover" media-type="application/xhtml+xml" properties="svg"/>
+    <item href="1920Aug/members.xhtml" id="aug1920.members" media-type="application/xhtml+xml"/>
+    <item href="1920Aug/asm.xhtml" id="aug1920.asm" media-type="application/xhtml+xml"/>
+  
+  <!-- 1920 Nov Issue -->
+    <item href="1920Nov/IssueCover.xhtml" id="nov1920.cover" media-type="application/xhtml+xml" properties="svg"/>
+    <item href="1920Nov/asm.xhtml" id="nov1920.asm" media-type="application/xhtml+xml"/>
+
+  <!-- index to five numbers -->
+    <item href="index.xhtml" id="index" media-type="application/xhtml+xml"/>
+
+  <!-- supplemental content -->
+    <item href="Supp/IssueCover.xhtml" id="supp2020.cover" media-type="application/xhtml+xml" properties="svg"/>
+    <item href="Supp/Evolution_and_Nomenclature.xhtml" id="supp2020.evonom" media-type="application/xhtml+xml"/>
+    <item href="Supp/taxonNova.xhtml" id="supp2020.taxonNova" media-type="application/xhtml+xml"/>
+
+  <!-- appendix content -->
+    <item href="apx/appendix.xhtml" id="apx" media-type="application/xhtml+xml"/>
+    <item href="apx/glossary.xhtml" id="apx.glossary" media-type="application/xhtml+xml"/>
+    <item href="apx/ePubNotes.xhtml" id="apx.ePubNotes" media-type="application/xhtml+xml"/>    
+    <item href="apx/cover.xhtml" id="apx.cover" media-type="application/xhtml+xml"/>
+    <item href="apx/todo.xhtml" id="apx.todo" media-type="application/xhtml+xml"/>
+    <item href="apx/neededphotos.xhtml" id="apx.photos" media-type="application/xhtml+xml"/>
+    <item href="apx/neededarticles.xhtml" id="apx.articles" media-type="application/xhtml+xml"/>
+    <item href="apx/bibliography.xhtml" id="apx.bib" media-type="application/xhtml+xml"/>
+    <item href="apx/a11y.xhtml" id="apx.a11y" media-type="application/xhtml+xml"/>
+    <item href="apx/donate.xhtml" id="apx.donate" media-type="application/xhtml+xml"/>
+    <item href="apx/copyright.xhtml" id="apx.copyright" media-type="application/xhtml+xml"/>
+    <item href="apx/changelog.xhtml" id="apx.changelog" media-type="application/xhtml+xml"/>
+  <!-- aux images -->
+  <item href="auximg/PreLogo.svg" id="PipfroschPressLogo" media-type="image/svg+xml"/>
+  <item href="auximg/JoM_V1N1.svg" id="JoMIll" media-type="image/svg+xml"/>
+  <item href="auximg/pronghorn-2519937_1280.jpg" id="YellowstonePronghorn" media-type="image/jpeg"/>
+  </manifest>
+  <spine>
+    <itemref idref="TitlePage"/>
+    <itemref idref="pubdates"/>
+    <itemref idref="toc4spine"/>
+    <itemref idref="nov1919.cover"/>
+    <itemref idref="nov1919.ToC"/>
+    <itemref idref="nov1919.bats-whitney"/>
+    <itemref idref="nov1919.recspec"/>
+    <itemref idref="nov1919.sewa"/>
+    <itemref idref="nov1919.sewa-litcited"/>
+    <itemref idref="nov1919.plate1"/>
+    <itemref idref="nov1919.plate2"/>
+    <itemref idref="nov1919.afcar"/>
+    <itemref idref="nov1919.beaver"/>
+    <itemref idref="nov1919.samammals"/>
+    <itemref idref="nov1919.foxsquirrels"/>
+    <itemref idref="nov1919.general"/>
+    <itemref idref="nov1919.recentlit"/>
+    <itemref idref="nov1919.editorial"/>
+    <itemref idref="nov1919.bylaws"/>
+    <itemref idref="nov1919.asm"/>
+
+
+
+    <itemref idref="feb1920.cover"/>
+    <itemref idref="feb1920.asm"/>
+    
+    <itemref idref="may1920.cover"/>
+    <itemref idref="may1920.asm"/>
+    
+    <itemref idref="aug1920.cover"/>
+    <itemref idref="aug1920.members"/>
+    <itemref idref="aug1920.asm"/>
+    
+    <itemref idref="nov1920.cover"/>
+    <itemref idref="nov1920.asm"/>
+    
+    <itemref idref="index"/>
+
+    <itemref idref="supp2020.cover"/>
+    <itemref idref="supp2020.evonom"/>
+    <itemref idref="supp2020.taxonNova"/>
+
+    <itemref idref="apx"/>
+    <itemref idref="apx.glossary"/>
+    <itemref idref="apx.ePubNotes"/>
+    <itemref idref="apx.cover"/>
+    <itemref idref="apx.todo"/>    
+    <itemref idref="apx.photos"/>
+    <itemref idref="apx.articles"/>
+    <itemref idref="apx.bib"/>
+    <itemref idref="apx.a11y"/>
+    <itemref idref="apx.donate"/>
+    <itemref idref="apx.copyright"/>
+    <itemref idref="apx.changelog"/>
+  </spine>
+</package>

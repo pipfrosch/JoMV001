@@ -1,0 +1,24 @@
+#issueCover {
+  padding: 0;
+  margin: 0;
+}
+
+text.jtitle {
+  font-family: 'Clear Sans', -apple-system, 'Segoe UI', 'Avenir Next', 'Noto Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+text.jcover {
+  font-family: 'Clear Sans', -apple-system, 'Segoe UI', 'Avenir Next', 'Noto Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.svgcoverfg {
+  fill: #222222;
+}
+
+.svgcoverbg {
+  fill: #7bc49a;
+}

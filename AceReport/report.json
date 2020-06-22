@@ -1,0 +1,625 @@
+{
+  "@type": "earl:report",
+  "@context": "http://daisy.github.io/ace/ace-report-1.0.jsonld",
+  "dct:title": "Ace Report",
+  "dct:description": "Report on automated accessibility checks for EPUB",
+  "dct:date": "5/8/2020, 6:13:21 AM",
+  "earl:assertedBy": {
+    "@type": "earl:software",
+    "doap:name": "DAISY Ace",
+    "doap:description": "DAISY Accessibility Checker for EPUB",
+    "doap:homepage": "http://daisy.github.io/ace",
+    "doap:created": "2017-07-01",
+    "doap:release": {
+      "doap:revision": "1.1.1"
+    }
+  },
+  "outlines": {
+    "toc": "<ol xmlns=\"http://www.w3.org/1999/xhtml\">\n  <li>Title Page</li>\n  <li>Publication Dates</li>\n  <li>Contents Page</li>\n  <!-- 1919 November -->\n  <li>Number 1 (November 1919)<ol>\n    <li>Number 1 Table of Contents</li>\n    <li>Bats from Mount Whitney, California by Glover M. Allen</li>\n    <li>Criteria for the Recognition of Species and Genera by C. Hart Merriam</li>\n    <li>The Mammals of Southeastern Washington by Lee Raymond Dice</li>\n    <li>Mammals of <abbr>SE</abbr> Washington Literature Cited</li>\n    <li>Plant and animal habitats in southeastern Washington (1)</li>\n    <li>Plant and animal habitats in southeastern Washington (2)</li>\n    <li>Preliminary Notes on African Carnivora by J. A. Allen</li>\n    <li>A New Subspecies of Beaver from North Dakota by Vernon Bailey</li>\n    <li>Names of Some South American Mammals by Wilfred H. Osgood</li>\n    <li>Notes on the Fox Squirrels of Southeastern United States</li>\n    <li>General Notes</li>\n    <li>Recent Literature</li>\n    <li>Editorial Comment</li>\n    <li>By-Laws and Rules of the American Society of Mammalogists</li>\n    <li>American Society of Mammalogists Notes</li>\n  </ol></li>\n  <!-- 1920 February -->\n  <li>Number 2 (February 1920)<ol>\n    <li>American Society of Mammalogists Notes</li>\n  </ol></li>\n  <!-- 1920 May -->\n  <li>Number 3 (May 1920)<ol>\n    <li>American Society of Mammalogists Notes</li>\n  </ol></li>\n  <!-- 1920 August -->\n  <li>Number 4 (August 1920)<ol>\n    <li>List of Members</li>\n    <li>American Society of Mammalogists Notes</li>\n  </ol></li>\n  <!-- 1920 November -->\n  <li>Number 5 (November 1920)<ol>\n    <li>American Society of Mammalogists Notes</li>\n  </ol></li>\n  \n  \n  \n  <li>Index to Volume I</li>\n  \n  <!-- Supplemental Content -->\n  <li>Supplemental Content<ol>\n    <li>Evolution and Nomenclature</li>\n    <li>Status of Volume 1 Taxon Nova</li>\n  </ol></li>\n  \n  <!-- appendix content -->\n  <li>Appendix<ol>\n    <li>Glossary of Terms</li>\n    <li>ePub Notes</li>\n    <li>Pipfrosch Press TODO List</li>\n    <li>ePub Cover</li>\n    <li>Needed Photographs</li>\n    <li>Needed Articles</li>\n    <li>Unified Bibliography</li>\n    <li>Donation Page</li>\n    <li>Copyright Page</li>\n    <li>Changelog</li>\n  </ol></li>\n</ol>",
+    "headings": "<ul><li><span class=\"toc-h1\">Journal of Mammalogy</span><ul><li><span class=\"toc-h2\">American Society of Mammalogists</span><li><span class=\"toc-h2\">Volume 1</span><ul><li><span class=\"toc-h3\">1919–1920 Number 1–5</span></li></ul></li></ul></li><li><span class=\"toc-h1\">Volume 1</span><ul><li><span class=\"toc-h2\">Actual dates of publication</span></li></ul></li><li><span class=\"toc-h1\">Contents of Volume 1</span><ul><li><span class=\"toc-h2\">Number 1</span><li><span class=\"toc-h2\">Number 2</span><li><span class=\"toc-h2\">Number 3</span><li><span class=\"toc-h2\">List of Plates in Volume 1</span><li><span class=\"toc-h2\">Supplementary Content</span><li><span class=\"toc-h2\">Appendix Content</span></li></ul></li><li><span class=\"toc-h1\">Contents</span><li><span class=\"toc-h1\">Bats from Mount Whitney, California</span><ul><li><span class=\"toc-h2\">Myotis yumanensis sociabilis H. W. Grinnell—Tejon Bat</span><li><span class=\"toc-h2\">Myotis albicinctus sp. nov.—White-edged Bat</span><li><span class=\"toc-h2\">Myotis longicrus interior Miller—Interior Long-legged Bat</span><li><span class=\"toc-h2\">Eptesicus fuscus (Beauvois)—Large Brown Bat</span><li><span class=\"toc-h2\">General Remarks</span></li></ul></li><li><span class=\"toc-h1\">Criteria for the Recognition of Species and Genera</span><li><span class=\"toc-h1\">The Mammals of Southeastern Washington</span><ul><li><span class=\"toc-h2\">Annotated List of Species</span></li></ul></li><li><span class=\"toc-h1\">Literature Cited</span><li><span class=\"toc-h1\">Plate 1</span><li><span class=\"toc-h1\">Plate 2</span><li><span class=\"toc-h1\">Preliminary Notes On African Carnivora</span><ul><li><span class=\"toc-h2\">Genus Aonyx Lesson</span><li><span class=\"toc-h2\">Micraonyx nom. nov.</span><li><span class=\"toc-h2\">Osbornictis[3] gen. nov.</span><li><span class=\"toc-h2\">Osbornictis piscivora sp. nov.</span><li><span class=\"toc-h2\">Xenogale gen. nov.</span><li><span class=\"toc-h2\">Xenogale microdon sp. nov.</span><li><span class=\"toc-h2\">The Generic Names Mungos and Herpestes</span></li></ul></li><li><span class=\"toc-h1\">A New Subspecies of Beaver from North Dakota</span><ul><li><span class=\"toc-h2\">Castor canadensis missouriensis subsp. nov.</span></li></ul></li><li><span class=\"toc-h1\">Names of Some South American Mammals</span><ul><li><span class=\"toc-h2\">Euphractus sexcinctus flavimanus Desmarest</span><li><span class=\"toc-h2\">Tolypeutes matacus Desmarest</span><li><span class=\"toc-h2\">Zaëdyus pichiy Desmarest</span><li><span class=\"toc-h2\">Cavia tschudii arequipæ nom. nov.</span><li><span class=\"toc-h2\">Canis australis Kerr</span><li><span class=\"toc-h2\">Chrysocyon brachyurus Illiger</span><li><span class=\"toc-h2\">Tayra barbara sinuensis Humboldt</span><li><span class=\"toc-h2\">Cebus xanthosternos Wied</span></li></ul></li><li><span class=\"toc-h1\">Notes on the Fox Squirrels of Southeastern United States, with Description of a New Form from Florida</span><ul><li><span class=\"toc-h2\">Sciurus niger avicennia[1] subsp. nov.</span></li></ul></li><li><span class=\"toc-h1\">General Notes</span><ul><li><span class=\"toc-h2\">The Georgian Bat, Pipistrellus subflavus, in Wisconsin</span><li><span class=\"toc-h2\">Is the Jaguar entitled to a place in the California Fauna?</span><li><span class=\"toc-h2\">An easy method of Cleaning Skulls</span><li><span class=\"toc-h2\">Why should every specimen be named?</span></li></ul></li><li><span class=\"toc-h1\">Recent Literature</span><ul><li><span class=\"toc-h2\">(Received since April 1, 1919)</span></li></ul></li><li><span class=\"toc-h1\">Editorial Comment</span><li><span class=\"toc-h1\">American Society of Mammalogists</span><ul><li><span class=\"toc-h2\">By-Laws and Rules</span><ul><li><span class=\"toc-h3\">Adopted April 3, 1919</span></li></ul></li><li><span class=\"toc-h2\">By-Laws</span><ul><li><span class=\"toc-h3\">Article I. Name and Objects</span><li><span class=\"toc-h3\">Article II. Membership</span><li><span class=\"toc-h3\">Article III. Officers</span><li><span class=\"toc-h3\">Article IV. Meetings</span><li><span class=\"toc-h3\">Article V. Quorum</span><li><span class=\"toc-h3\">Article VI. Amendments</span><li><span class=\"toc-h3\">Article VII. Rules</span><li><span class=\"toc-h3\">Article VIII. Fees and Accounts</span></li></ul></li><li><span class=\"toc-h2\">Rules</span><ul><li><span class=\"toc-h3\">Rule I. Election of Officers</span><li><span class=\"toc-h3\">Rule II. Order of Business</span></li></ul></li></ul></li><li><span class=\"toc-h1\">The American Society of Mammalogists</span><ul><li><span class=\"toc-h2\">Founded April 3, 1919</span><ul><li><span class=\"toc-h3\">Standing Committees</span><li><span class=\"toc-h3\">The Journal of Mammalogy</span></li></ul></li></ul></li><li><span class=\"toc-h1\">The American Society of Mammalogists</span><ul><li><span class=\"toc-h2\">Founded April 3, 1919</span><ul><li><span class=\"toc-h3\">Standing Committees</span><li><span class=\"toc-h3\">The Journal of Mammalogy</span></li></ul></li></ul></li><li><span class=\"toc-h1\">The American Society of Mammalogists</span><ul><li><span class=\"toc-h2\">Founded April 3, 1919</span><ul><li><span class=\"toc-h3\">Standing Committees</span><li><span class=\"toc-h3\">The Journal of Mammalogy</span></li></ul></li></ul></li><li><span class=\"toc-h1\">List of Members of the American Society of Mammalogists</span><ul><li><span class=\"toc-h2\">Honorary Member</span><li><span class=\"toc-h2\">Members</span></li></ul></li><li><span class=\"toc-h1\">The American Society of Mammalogists</span><ul><li><span class=\"toc-h2\">Founded April 3, 1919</span><li><span class=\"toc-h2\">Incorporated April 29, 1920</span><ul><li><span class=\"toc-h3\">Standing Committees</span><li><span class=\"toc-h3\">The Journal of Mammalogy</span></li></ul></li></ul></li><li><span class=\"toc-h1\">The American Society of Mammalogists</span><ul><li><span class=\"toc-h2\">Founded April 3, 1919</span><li><span class=\"toc-h2\">Incorporated April 29, 1920</span><ul><li><span class=\"toc-h3\">Standing Committees</span><li><span class=\"toc-h3\">The Journal of Mammalogy</span></li></ul></li></ul></li><li><span class=\"toc-h1\">Index to Volume I</span><ul><li><span class=\"toc-h2\">Navigate to Letter</span><li><span class=\"toc-h2\">A</span><li><span class=\"toc-h2\">B</span><li><span class=\"toc-h2\">C</span><li><span class=\"toc-h2\">D</span><li><span class=\"toc-h2\">E</span><li><span class=\"toc-h2\">F</span><li><span class=\"toc-h2\">G</span><li><span class=\"toc-h2\">H</span><li><span class=\"toc-h2\">I</span><li><span class=\"toc-h2\">J</span><li><span class=\"toc-h2\">K</span><li><span class=\"toc-h2\">L</span><li><span class=\"toc-h2\">M</span><li><span class=\"toc-h2\">N</span><li><span class=\"toc-h2\">O</span><li><span class=\"toc-h2\">P</span><li><span class=\"toc-h2\">R</span><li><span class=\"toc-h2\">S</span><li><span class=\"toc-h2\">T</span><li><span class=\"toc-h2\">U</span><li><span class=\"toc-h2\">V</span><li><span class=\"toc-h2\">W</span><li><span class=\"toc-h2\">X</span><li><span class=\"toc-h2\">Z</span></li></ul></li><li><span class=\"toc-h1\">Evolution and Nomenclature</span><ul><li><span class=\"toc-h2\">Introduction</span><li><span class=\"toc-h2\">A View of Evolution</span><li><span class=\"toc-h2\">The Species Construct</span><ul><li><span class=\"toc-h3\">Chronospecies</span><li><span class=\"toc-h3\">Recent Species</span></li></ul></li><li><span class=\"toc-h2\">Population</span><li><span class=\"toc-h2\">Evolutionary Species Concept</span><li><span class=\"toc-h2\">Taxonomy</span><li><span class=\"toc-h2\">Taxonomist vs. Naturalist</span><li><span class=\"toc-h2\">Named Species</span></li></ul></li><li><span class=\"toc-h1\">Status of Volume 1 Taxon Nova</span><ul><li><span class=\"toc-h2\">Castor canadensis missouriensis</span><li><span class=\"toc-h2\">Cavia tschudii arequipæ</span><li><span class=\"toc-h2\">Micraonyx</span><li><span class=\"toc-h2\">Myotis albicinctus</span><li><span class=\"toc-h2\">Neofiber alleni nigrescens</span><li><span class=\"toc-h2\">Osbornictis</span><li><span class=\"toc-h2\">Osbornictis piscivora</span><li><span class=\"toc-h2\">Sciurus niger avicennia</span><li><span class=\"toc-h2\">Xenogale</span><ul><li><span class=\"toc-h3\">Xenogale Summary</span></li></ul></li><li><span class=\"toc-h2\">Xenogale microdon</span></li></ul></li><li><span class=\"toc-h1\">Appendix</span><li><span class=\"toc-h1\">Glossary of Terms</span><li><span class=\"toc-h1\">ePub Notes</span><ul><li><span class=\"toc-h2\">General Changes</span><li><span class=\"toc-h2\">Literature Cited Notes</span><li><span class=\"toc-h2\">Index Notes</span></li></ul></li><li><span class=\"toc-h1\">Pipfrosch Press TODO List</span><ul><li><span class=\"toc-h2\">Finish Transcription</span><li><span class=\"toc-h2\">Glossary</span><li><span class=\"toc-h2\">Cover Art</span><li><span class=\"toc-h2\">Notes for Students</span><li><span class=\"toc-h2\">Updated Plates</span></li></ul></li><li><span class=\"toc-h1\">ePub Cover</span><li><span class=\"toc-h1\">Needed Photographs</span><ul><li><span class=\"toc-h2\">Vertebrate Zoology Museum</span><li><span class=\"toc-h2\">Southeastern Washington State</span><li><span class=\"toc-h2\">Okefinokee Swamp in Georgia</span><li><span class=\"toc-h2\">Great Plains (likely Montana or Wyoming)</span><li><span class=\"toc-h2\">Canoga Park, Los Angeles, California</span><li><span class=\"toc-h2\">Northwestern Indiana</span><li><span class=\"toc-h2\">British Museum, London, England</span><li><span class=\"toc-h2\">Colorado</span></li></ul></li><li><span class=\"toc-h1\">Needed Articles</span><ul><li><span class=\"toc-h2\">Mammalian Dentition</span></li></ul></li><li><span class=\"toc-h1\">Unified Bibliography</span><ul><li><span class=\"toc-h2\">Navigate to Letter</span><li><span class=\"toc-h2\">A</span><li><span class=\"toc-h2\">B</span><li><span class=\"toc-h2\">C</span><li><span class=\"toc-h2\">D</span><li><span class=\"toc-h2\">F</span><li><span class=\"toc-h2\">G</span><li><span class=\"toc-h2\">H</span><li><span class=\"toc-h2\">I</span><li><span class=\"toc-h2\">J</span><li><span class=\"toc-h2\">K</span><li><span class=\"toc-h2\">L</span><li><span class=\"toc-h2\">M</span><li><span class=\"toc-h2\">N</span><li><span class=\"toc-h2\">O</span><li><span class=\"toc-h2\">P</span><li><span class=\"toc-h2\">R</span><li><span class=\"toc-h2\">S</span><li><span class=\"toc-h2\">T</span><li><span class=\"toc-h2\">W</span></li></ul></li><li><span class=\"toc-h1\">Donations</span><ul><li><span class=\"toc-h2\">Pipfrosch Press</span><li><span class=\"toc-h2\">American Society of Mammalogists</span></li></ul></li><li><span class=\"toc-h1\">Copyright Information</span><ul><li><span class=\"toc-h2\">Redistribution</span></li></ul></li><li><span class=\"toc-h1\">CHANGELOG</span><ul><li><span class=\"toc-h2\">April 23, 2020</span></li></ul></li></ul>",
+    "html": "<ol><li><ol><li><i>Untitled BODY</i><ol><li>Journal of Mammalogy<ol><li>American Society of Mammalogists</li><li>Volume 1<ol><li>1919–1920 Number 1–5</li></ol></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Volume 1<ol><li>Actual dates of publication</li></ol></li></ol></li></ol></li><li><ol><li>Contents of Volume 1<ol><li>Number 1</li><li>Number 2</li><li>Number 3</li><li>List of Plates in Volume 1</li><li>Supplementary Content</li><li>Appendix Content</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li><i>Untitled SECTION</i></li></ol></li></ol></li><li><ol><li>Contents</li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Bats from Mount Whitney, California<ol><li><i>Untitled SECTION</i></li><li>Myotis yumanensis sociabilis H. W. Grinnell—Tejon Bat</li><li>Myotis albicinctus sp. nov.—White-edged Bat<ol><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li></ol></li><li>Myotis longicrus interior Miller—Interior Long-legged Bat</li><li>Eptesicus fuscus (Beauvois)—Large Brown Bat</li><li>General Remarks</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Criteria for the Recognition of Species and Genera</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>The Mammals of Southeastern Washington<ol><li><i>Untitled SECTION</i></li><li>Annotated List of Species</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Literature Cited</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Plate 1</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Plate 2</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Preliminary Notes On African Carnivora<ol><li><i>Untitled SECTION</i></li><li>Genus Aonyx Lesson<ol><li><i>Untitled SECTION</i></li></ol></li><li>Micraonyx nom. nov.<ol><li><i>Untitled SECTION</i></li></ol></li><li>Osbornictis[3] gen. nov.<ol><li><i>Untitled SECTION</i></li></ol></li><li>Osbornictis piscivora sp. nov.</li><li>Xenogale gen. nov.<ol><li><i>Untitled SECTION</i></li></ol></li><li>Xenogale microdon sp. nov.</li><li>The Generic Names Mungos and Herpestes</li><li><i>Untitled SECTION</i><ol><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li><li><i>Untitled ASIDE</i></li></ol></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>A New Subspecies of Beaver from North Dakota<ol><li><i>Untitled SECTION</i></li><li>Castor canadensis missouriensis subsp. nov.<ol><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li></ol></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Names of Some South American Mammals<ol><li><i>Untitled SECTION</i></li><li>Euphractus sexcinctus flavimanus Desmarest<ol><li><i>Untitled SECTION</i></li></ol></li><li>Tolypeutes matacus Desmarest<ol><li><i>Untitled SECTION</i></li></ol></li><li>Zaëdyus pichiy Desmarest<ol><li><i>Untitled SECTION</i></li></ol></li><li>Cavia tschudii arequipæ nom. nov.<ol><li><i>Untitled SECTION</i></li></ol></li><li>Canis australis Kerr<ol><li><i>Untitled SECTION</i></li></ol></li><li>Chrysocyon brachyurus Illiger<ol><li><i>Untitled SECTION</i></li></ol></li><li>Tayra barbara sinuensis Humboldt<ol><li><i>Untitled SECTION</i></li></ol></li><li>Cebus xanthosternos Wied<ol><li><i>Untitled SECTION</i></li></ol></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Notes on the Fox Squirrels of Southeastern United States, with Description of a New Form from Florida<ol><li><i>Untitled SECTION</i></li><li>Sciurus niger avicennia[1] subsp. nov.<ol><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li></ol></li><li><i>Untitled SECTION</i><ol><li><i>Untitled ASIDE</i></li></ol></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>General Notes<ol><li>The Georgian Bat, Pipistrellus subflavus, in Wisconsin</li><li>Is the Jaguar entitled to a place in the California Fauna?</li><li>An easy method of Cleaning Skulls</li><li>Why should every specimen be named?</li><li><i>Untitled SECTION</i><ol><li><i>Untitled ASIDE</i></li></ol></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Recent Literature<ol><li>(Received since April 1, 1919)</li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li><li><i>Untitled SECTION</i></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Editorial Comment</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>American Society of Mammalogists<ol><li>By-Laws and Rules<ol><li>Adopted April 3, 1919</li></ol></li><li>By-Laws<ol><li>Article I. Name and Objects</li><li>Article II. Membership</li><li>Article III. Officers</li><li>Article IV. Meetings</li><li>Article V. Quorum</li><li>Article VI. Amendments</li><li>Article VII. Rules</li><li>Article VIII. Fees and Accounts</li></ol></li><li>Rules<ol><li>Rule I. Election of Officers</li><li>Rule II. Order of Business</li></ol></li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>The American Society of Mammalogists<ol><li>Founded April 3, 1919</li><li>Standing Committees</li><li>The Journal of Mammalogy</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li><i>Untitled SECTION</i></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>The American Society of Mammalogists<ol><li>Founded April 3, 1919</li><li>Standing Committees</li><li>The Journal of Mammalogy</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li><i>Untitled SECTION</i></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>The American Society of Mammalogists<ol><li>Founded April 3, 1919</li><li>Standing Committees</li><li>The Journal of Mammalogy</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li><i>Untitled SECTION</i></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>List of Members of the American Society of Mammalogists<ol><li>Honorary Member</li><li>Members</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>The American Society of Mammalogists<ol><li>Founded April 3, 1919</li><li>Incorporated April 29, 1920</li><li>Standing Committees</li><li>The Journal of Mammalogy</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li><i>Untitled SECTION</i></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>The American Society of Mammalogists<ol><li>Founded April 3, 1919</li><li>Incorporated April 29, 1920</li><li>Standing Committees</li><li>The Journal of Mammalogy</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Index to Volume I<ol><li><i>Untitled ASIDE</i></li><li>Navigate to Letter</li><li>A</li><li>B</li><li>C</li><li>D</li><li>E</li><li>F</li><li>G</li><li>H</li><li>I</li><li>J</li><li>K</li><li>L</li><li>M</li><li>N</li><li>O</li><li>P</li><li>R</li><li>S</li><li>T</li><li>U</li><li>V</li><li>W</li><li>X</li><li>Z</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li><i>Untitled SECTION</i></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Evolution and Nomenclature<ol><li>Introduction</li><li>A View of Evolution</li><li>The Species Construct<ol><li>Chronospecies</li><li>Recent Species</li></ol></li><li>Population</li><li>Evolutionary Species Concept</li><li>Taxonomy</li><li>Taxonomist vs. Naturalist</li><li>Named Species</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Status of Volume 1 Taxon Nova<ol><li><i>Untitled SECTION</i></li><li>Castor canadensis missouriensis</li><li>Cavia tschudii arequipæ</li><li>Micraonyx</li><li>Myotis albicinctus</li><li>Neofiber alleni nigrescens</li><li>Osbornictis</li><li>Osbornictis piscivora</li><li>Sciurus niger avicennia</li><li>Xenogale<ol><li>Xenogale Summary</li></ol></li><li>Xenogale microdon</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Appendix</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Glossary of Terms</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>ePub Notes<ol><li>General Changes</li><li>Literature Cited Notes</li><li>Index Notes</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Pipfrosch Press TODO List<ol><li>Finish Transcription</li><li>Glossary</li><li>Cover Art</li><li>Notes for Students</li><li>Updated Plates</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>ePub Cover</li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Needed Photographs<ol><li>Vertebrate Zoology Museum</li><li>Southeastern Washington State</li><li>Okefinokee Swamp in Georgia</li><li>Great Plains (likely Montana or Wyoming)</li><li>Canoga Park, Los Angeles, California</li><li>Northwestern Indiana</li><li>British Museum, London, England</li><li>Colorado</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Needed Articles<ol><li>Mammalian Dentition</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Unified Bibliography<ol><li>Navigate to Letter</li><li>A</li><li>B</li><li>C</li><li>D</li><li>F</li><li>G</li><li>H</li><li>I</li><li>J</li><li>K</li><li>L</li><li>M</li><li>N</li><li>O</li><li>P</li><li>R</li><li>S</li><li>T</li><li>W</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Donations<ol><li>Pipfrosch Press</li><li>American Society of Mammalogists</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>Copyright Information<ol><li>Redistribution</li></ol></li></ol></li></ol></li><li><ol><li><i>Untitled BODY</i><ol><li>CHANGELOG<ol><li>April 23, 2020</li></ol></li></ol></li></ol></li></ol>"
+  },
+  "data": {
+    "images": [
+      {
+        "src": "EPUB/1919Nov/plates/plate1fig1.jpg",
+        "alt": null,
+        "role": null,
+        "html": "<img xmlns=\"http://www.w3.org/1999/xhtml\" src=\"plates/plate1fig1.jpg\" aria-labelledby=\"plate1fig1figcap\" />",
+        "figcaption": "Figure 1. Cottonwood-Willow Habitat Along the Touchet River Two Miles East of Prescott",
+        "location": "1919Nov/plate1.xhtml#epubcfi(/4/2[plate1]/6[fig1]/2)"
+      },
+      {
+        "src": "EPUB/1919Nov/plates/plate1fig2.jpg",
+        "alt": null,
+        "role": null,
+        "html": "<img xmlns=\"http://www.w3.org/1999/xhtml\" src=\"plates/plate1fig2.jpg\" aria-labelledby=\"plate1fig2figcap\" />",
+        "figcaption": "Figure 2. Yellow Pine Covered Hillsides on the South Fork of the Touchet River about Ten Miles above Dayton",
+        "location": "1919Nov/plate1.xhtml#epubcfi(/4/2[plate1]/10[fig2]/2)"
+      },
+      {
+        "src": "EPUB/1919Nov/plates/plate2fig1.jpg",
+        "alt": null,
+        "role": null,
+        "html": "<img xmlns=\"http://www.w3.org/1999/xhtml\" src=\"plates/plate2fig1.jpg\" aria-labelledby=\"plate2fig1figcap\" />",
+        "figcaption": "Figure 1. Rabbit Brush Habitat in the Sagebrush Area Four Miles East of Wallula",
+        "location": "1919Nov/plate2.xhtml#epubcfi(/4/2[plate1]/6[fig1]/2)"
+      },
+      {
+        "src": "EPUB/1919Nov/plates/plate2fig2.jpg",
+        "alt": null,
+        "role": null,
+        "html": "<img xmlns=\"http://www.w3.org/1999/xhtml\" src=\"plates/plate2fig2.jpg\" aria-labelledby=\"plate2fig2figcap\" />",
+        "figcaption": "Figure 2. The Canyon of Snake River, Looking West from Lyon’s Ferry",
+        "location": "1919Nov/plate2.xhtml#epubcfi(/4/2[plate1]/10[fig2]/2)"
+      }
+    ]
+  },
+  "properties": {
+    "hasManifestFallbacks": false,
+    "hasBindings": false,
+    "hasSVGContentDocuments": false,
+    "hasFormElements": false,
+    "hasMathML": false,
+    "hasPageBreaks": true
+  },
+  "earl:testSubject": {
+    "url": "../JoM-V1.kepub.epub",
+    "metadata": {
+      "dc:title": "Journal of Mammalogy Volume 1",
+      "dc:description": "1919–1920 Numbers 1–5 plus Supplemental content",
+      "dc:type": "Natural History",
+      "dc:language": "en-US",
+      "dc:publisher": "Pipfrosch Press",
+      "dc:date": "2020-06-01",
+      "dc:creator": [
+        "American Society of Mammalogists",
+        "Pipfrosch Press"
+      ],
+      "dc:contributor": [
+        "N. Hollister",
+        "Michael A. Peters",
+        "Glover M. Allen",
+        "C. Hart Merriam",
+        "Lee Raymond Dice",
+        "John Woodhouse Audobon",
+        "Nicole Wilson"
+      ],
+      "dc:identifier": "2170060d-e36c-49b7-8640-e501d682ef45",
+      "dc:source": "0022-2372",
+      "schema:accessibilitySummary": "This publication attempts to conform to WCAG 2.0 Level AA. Validation by an accessibility expert has not yet been done.",
+      "schema:accessMode": [
+        "textual",
+        "visual"
+      ],
+      "schema:accessModeSufficient": [
+        "textual,visual",
+        "textual"
+      ],
+      "schema:accessibilityFeature": "structuralNavigation",
+      "schema:accessibilityHazard": [
+        "noFlashingHazard",
+        "noSoundHazard",
+        "noMotionSimulationHazard"
+      ],
+      "dcterms:modified": "2020-05-08T13:13:15Z"
+    },
+    "links": {}
+  },
+  "a11y-metadata": {
+    "missing": [
+      "schema:accessibilityAPI",
+      "schema:accessibilityControl",
+      "a11y:certifiedBy",
+      "dcterms:conformsTo"
+    ],
+    "empty": [],
+    "present": [
+      "schema:accessMode",
+      "schema:accessibilityFeature",
+      "schema:accessibilityHazard",
+      "schema:accessibilitySummary",
+      "schema:accessModeSufficient"
+    ]
+  },
+  "assertions": [
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "EPUB/content.opf",
+        "dct:title": "Journal of Mammalogy Volume 1"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "TitlePage.xhtml",
+        "dct:title": "Title Page"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "pubdates.xhtml",
+        "dct:title": "Publication Dates"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "ToC4spine.xhtml",
+        "dct:title": "Contents Page"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/IssueCover.xhtml",
+        "dct:title": "November 1919 Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/IssueToC.xhtml",
+        "dct:title": "Number 1 Contents Page"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/bats_mount_whitney.xhtml",
+        "dct:title": "Bats from Mount Whitney, California"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/recognition_of_species.xhtml",
+        "dct:title": "Criteria for the Recognition of Species and Genera"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/se_wa.xhtml",
+        "dct:title": "The Mammals of Southeastern Washington"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/se_wa-litcited.xhtml",
+        "dct:title": "Literature Cited"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/plate1.xhtml",
+        "dct:title": "Plate 1"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/plate2.xhtml",
+        "dct:title": "Plate 2"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/af_carnivora.xhtml",
+        "dct:title": "Preliminary Notes On African Carnivora"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/nd_beaver.xhtml",
+        "dct:title": "A New Subspecies of Beaver from North Dakota"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/sa_mammals.xhtml",
+        "dct:title": "Names of Some South American Mammals"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/fox_squirrels.xhtml",
+        "dct:title": "Notes on the Fox Squirrels of Southeastern United States"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/general.xhtml",
+        "dct:title": "General Notes"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/recentlit.xhtml",
+        "dct:title": "Recent Literature"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/editorial.xhtml",
+        "dct:title": "Editorial Comment"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/bylaws.xhtml",
+        "dct:title": "By-Laws and Rules"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1919Nov/asm.xhtml",
+        "dct:title": "November 1919  Inside Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920Feb/IssueCover.xhtml",
+        "dct:title": "February 1920 Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920Feb/asm.xhtml",
+        "dct:title": "February 1920 Inside Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920May/IssueCover.xhtml",
+        "dct:title": "May 1920 Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920May/asm.xhtml",
+        "dct:title": "May 1920 Inside Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920Aug/IssueCover.xhtml",
+        "dct:title": "August 1920 Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920Aug/members.xhtml",
+        "dct:title": "List of Members"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920Aug/asm.xhtml",
+        "dct:title": "August 1920 Inside Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920Nov/IssueCover.xhtml",
+        "dct:title": "November 1920 Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "1920Nov/asm.xhtml",
+        "dct:title": "November 1920 Inside Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "index.xhtml",
+        "dct:title": "Index to Volume I"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "Supp/IssueCover.xhtml",
+        "dct:title": "Supplemental Content Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "Supp/Evolution_and_Nomenclature.xhtml",
+        "dct:title": "Evolution and Nomenclature"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "Supp/taxonNova.xhtml",
+        "dct:title": "Status of Volume 1 Taxon Nova"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/appendix.xhtml",
+        "dct:title": "Glossary of Terms"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/glossary.xhtml",
+        "dct:title": "Glossary of Terms"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/ePubNotes.xhtml",
+        "dct:title": "ePub Notes"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/todo.xhtml",
+        "dct:title": "TODO"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/cover.xhtml",
+        "dct:title": "ePub Cover"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/neededphotos.xhtml",
+        "dct:title": "Needed Photos"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/neededarticles.xhtml",
+        "dct:title": "Needed Articles"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/bibliography.xhtml",
+        "dct:title": "Unified Bibliography"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/donate.xhtml",
+        "dct:title": "TODO"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/copyright.xhtml",
+        "dct:title": "Copyright Page"
+      }
+    },
+    {
+      "@type": "earl:assertion",
+      "earl:result": {
+        "earl:outcome": "pass"
+      },
+      "assertions": [],
+      "earl:testSubject": {
+        "url": "apx/changelog.xhtml",
+        "dct:title": "Changelog"
+      }
+    }
+  ],
+  "earl:result": {
+    "earl:outcome": "pass"
+  }
+}

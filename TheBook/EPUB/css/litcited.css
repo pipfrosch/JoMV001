@@ -1,0 +1,103 @@
+h2.index {
+  text-align: center;
+}
+
+ul.bib {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+p.bib {
+  padding-left: 1.5em;
+  text-indent:-1.5em;
+  margin-top: 0em;
+  margin-bottom: 0.2em;
+}
+
+p.citedby {
+  padding-left: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+p.citedby::before {
+  content: "Cited by: "
+}
+
+span.citedby span:not(:last-child)::after {
+  content: ";";
+}
+
+span.citedby span:last-child::after {
+  content: ".";
+}
+
+p.bib span.author {
+  font-weight: bold;
+}
+
+p.bib span.author::after {
+  content: ".";
+}
+
+p.bib span.book {
+  text-decoration: underline;
+}
+
+p.bib span.book::after {
+  content: ".";
+}
+
+p.bib span.article span.taxon {
+  text-decoration: underline;
+}
+
+p.bib span.article::after {
+  content: ".";
+}
+
+p.bib span.journal {
+  font-style: italic;
+}
+
+p.bib span.journal::after {
+  content: ",";
+}
+
+p.bib span.details::after {
+  content: ".";
+}
+
+p.bib span.city::after {
+  content: ":";
+}
+
+p.bib span.publisher::after {
+  content: ".";
+}
+
+p.bib span.uri {
+  font-family: 'Fira Mono', 'Andale Mono', 'Lucida Mono EF', 'Monaco', 'Noto Sans Mono', monospace;
+  font-weight: 500;
+}
+
+p.bib span.uri::before {
+  content: "["
+}
+
+p.bib span.uri::after {
+  content: "]"
+}
+
+p.bib span.note::before {
+  content: "(";
+}
+
+p.bib span.note::after {
+  content: ")";
+}
+
+span.raisedr {
+  font-size: smaller;
+  vertical-align: 0.3em;
+}

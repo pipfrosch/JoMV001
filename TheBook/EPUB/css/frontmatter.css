@@ -1,0 +1,29 @@
+li span.author {
+  font-style: italic;
+}
+
+li span.author::before {
+  content: " .....by ";
+}
+
+text.logo {
+  font-family: 'Clear Sans', -apple-system, 'Segoe UI', 'Avenir Next', 'Noto Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+text.ilogo {
+  font-family: 'Clear Sans', -apple-system, 'Segoe UI', 'Avenir Next', 'Noto Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+h2.actual {
+  font-weight: normal;
+  text-align: center;
+  font-style: italic;
+}
+
+dl.actual dt {
+  font-weight: bold;
+}

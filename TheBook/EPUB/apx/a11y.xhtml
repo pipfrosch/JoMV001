@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+  xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+  <meta charset="utf-8"/>
+  <title>Accessibility Notes</title>
+  <link rel="stylesheet" type="text/css" href="../css/fonts.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/a11y.css"/>
+  <link rel="pronunciation" type="application/pls+xml" href="../pronunciation.pls"/>
+</head>
+<body epub:type="backmatter">
+<section epub:type="appendix" role="doc-appendix" aria-labelledby="a11y.label">
+  <h1 id="a11y.label">Accessibility Notes</h1>
+  <p>Regardless of any digital rights management or the license terms a digital book is released under, libraries and educational facilities and probably some other institutions have the legal right&#8212;and perhaps legal obligation in some cases&#8212;to modify digital books to reduce or eliminate accessibility barriers for their users that need them mitigated. Legalities aside, when a digital publication can be modified to mitigate or reduce an accessibility barrier it certainly is the moral thing to do.</p>
+  <p>To help facilitate this, every page in the ePub spine references the file <code>css/a11y.css</code> as the last style sheet that is referenced so that any accessibility fixes that can be made with <abbr>CSS</abbr> can be placed in that file and they will always override any default styles defined by the ePub viewer or any <abbr>CSS</abbr> definitions defined in this ePub that may be causing accessibility issues for a user. Modification of that file does require some technical skill.</p>
+  <p>It is the explicit goal of Pipfrosch Press for everything we publish to meet the <abbr>WCAG </abbr> 2.1 &#8216;AA&#8217; conformance level and it is the desire of Pipfrosch Press to meet as many &#8216;AAA&#8217; success criteria as practical within the current funding limitations.</p>
+  <p>Not all accessibility barriers have corresponding <abbr>WCAG </abbr> 2.1 success criterion. When aware of such barriers, Pipfrosch Press generally considers them to be &#8216;AAA&#8217; issues which means we try to provide solutions when practical to do so within the current funding limitations but may not always be able to.</p>
+  <div role="navigation" id="issues" aria-labelledby="issues.label">
+    <h2 id="issues.label">Known <abbr>WCAG</abbr> Conformance Issues</h2>
+    <ol>
+      <li><abbr>WCAG</abbr> &#8216;A&#8217; conformance issues<ol>
+        <li>Hopefully none exist.</li>
+        </ol></li>
+      <li><abbr>WCAG</abbr> &#8216;AA&#8217; conformance issues<ol>
+        <li><a href="#technical">Visual Technical Nomenclature Terms</a></li>
+      </ol></li>
+      <li><abbr>WCAG</abbr> &#8216;AAA&#8217; conformance issues<ol>
+        <li><a href="#contrast">Contrast Issue</a></li>
+        <li><a href="#italics">Italicized Text Issue</a></li>
+        <li><a href="#figurefont">Figure Font Size</a></li>
+        <li><a href="#phonetic">Phonetic Markup</a></li>
+        <li><a href="#ligatures">&#8216;Æ&#8217; and &#8216;Œ&#8217; Ligatures</a></li>
+        <li><a href="#highcontrast">High Contrast Text</a></li>
+      </ol></li>
+    </ol>
+  </div>
+  <section id="technical" aria-labelledby="technical.label">
+    <h2 id="technical.label">Visual Technical Nomenclature Terms</h2>
+    <p>Some technical terms used in this ePub&#8212;such as mammalian dentition notation&#8212;has a visual aspect to the nomenclature.</p>
+    <p>Assistive technology for the print disabled may not present those terms to users in an optimal way without proper tagging instructing the assistive technology in how to present the terms to the user. With mathematical equations, <a href="https://www.washington.edu/accesscomputing/what-mathspeak" title="Internet Resource">MathSpeak</a> can be used to solve this issue but I am currently ignorant on what the proper methods are for visual presentations of terms that are not mathematics.</p>
+    <p>I was not able to find the specific <abbr>WCAG</abbr> success criterion this violates but Pipfrosch Press considers this to be a level &#8216;AA&#8217; conformance issue. This ePub is intended to convey scientific information which makes proper markup of technical terms that have a visual component critical. This must be solved before the initial official release of this ePub.</p>
+  </section>
+  <section id="contrast" aria-labelledby="contrast.label">
+    <h2 id="contrast.label">Contrast Issue</h2>
+    <p>The covers for the original &#8216;Numbers&#8217; in Volume 1 had a greenish background color behind the artwork and text. For nostalgia reasons I have attempted to emulate those covers including a greenish background color.</p>
+    <p>The background color I chose has a 7.73:1 contrast ratio with the &#8216;not quite but nearly black&#8217; text color and does pass the necessary contrast threshold for <abbr>WCAG</abbr> &#8216;AA&#8217; <a href="https://www.w3.org/TR/WCAG21/#contrast-minimum" title="Internet Resourse">Success Criterion 1.4.3</a> at all font sizes but it barely passes &#8216;AAA&#8217; <a href="https://www.w3.org/TR/WCAG21/#contrast-enhanced" title="Internet Resourse">Success Criterion 1.4.6</a> and may present issues for the text that uses a smaller than &#8216;normal&#8217; font size. The font size used on the emulated covers is actually determined by the display screen size, so that may happen.</p>
+    <section id="contrast.solution" aria-labelledby="contrast.solution.label">
+      <h3 id="contrast.solution.label">Contrast Issue Solution</h3>
+      <p>For a user who needs more contrast than the greenish emulated covers provide, add the following to the <code>css/a11y.css</code> file:</p>
+      <div class="prewrap">.svgcoverbg {
+  fill: none;
+}</div>
+      <p>That will remove the purely nostalgic background color from the emulated covers.</p>
+    </section>
+  </section>
+  <section id="italics" aria-labelledby="italics.label">
+    <h2 id="italics.label">Italicized Text Issue</h2>
+    <p>For some users, including but not exclusively many dyslexic users, italicized text can be an access barrier. I am not able to find a specific <abbr>WCAG</abbr> success criterion related to italicized text but that does not make this issue any less real.</p>
+    <p>A web page that does discuss dyslexic accessibility issues: <a href="https://uxmovement.com/content/6-surprising-bad-practices-that-hurt-dyslexic-users/" title="Internet Resource">6 Surprising Bad Practices That Hurt Dyslexic Users</a>.</p>
+    <section id="italics.solution" aria-labelledby="italics.solution.label">
+      <h3 id="italics.solution.label">Italicized Text Solution</h3>
+      <p>To accomodate users who have issues with italicized text, there are already <abbr>CSS</abbr> definitions in a file called <code>css/noitalics.css</code> to override <em>most</em> of the uses of italicized text within this ePub but in a visually meaningful way so that the visual cues are not lost.</p>
+      <p>Copy the contents of that file into the <code>css/a11y.css</code> file and most of the italicized text will be replaced with upright text, with the following exceptions:</p>
+      <ol>
+        <li>The ePub cover is a bitmap image, text on the ePub cover can not be altered with <abbr>CSS</abbr>. This is a limitation of ePub and digital books in general. The cover is primarily intended for the digital library and ePub viewers need to turn it into a thumbnail sized for the library view without being expected to rasterize a vector image.</li>
+        <li>A few technical nomenclature terms&#8212;such as the dental notation <span class="nomen">pm<sup>2</sup></span>&#8212;remain italicized.</li>
+      </ol>
+      <p>In the second case, if you really need to override the italics you still can by also adding the following to the <code>css/a11y.css</code> file:</p>
+<div class="prewrap">.nomen {
+  font-style: normal;
+}
+span.lingual {
+  font-style: normal;
+}</div>
+    </section>
+  </section>
+  <section id="figurefont" aria-labelledby="figurefont.label">
+    <h2 id="figurefont.label">Figure Font Size</h2>
+    <p>I currently classify this as a &#8216;AAA&#8217; issue although it <em>may</em> actually be a &#8216;AA&#8217; issue (<a href="https://www.w3.org/TR/WCAG21/#resize-text" title="Internet Resource">Success Criterion 1.4.4</a> depending upon if the text is considered a caption). I am not able to find a specific &#8216;AAA&#8217; success criterion for this issue but that does not make it any less real.</p>
+    <p>When a user needs a larger font size, increasing the font size used by the ePub viewer will not increase the font size used in figures that are drawn with <abbr>SVG</abbr>. There is not an easy solution to this problem that I am aware of.</p>
+    <p>Even though it should be technically possible for an ePub viewer to allow the user to zoom in on a part of a figure as needed, it seems that very few ePub viewers actually implement this kind of functionallity. I have personally only seen it implemented when an <abbr>SVG</abbr> image is embedded in an ePub page using the <code>&lt;img/&gt;</code> tag, but that is not how figures are done in this ePub as that method does not seem to allow the image to have access to fonts embedded within the ePub.</p>
+    <p>I am hopeful that in the near future I will either discover an existing solution to this issue or if one does not yet exist, that a solution will be developed that ePub viewers implement.</p>
+  </section>
+  <section id="phonetic" aria-labelledby="phonetic.label">
+    <h2 id="phonetic.label">Phonetic Markup</h2>
+    <p>This is &#8216;AAA&#8217; <a href="https://www.w3.org/TR/WCAG21/#pronunciation" title="Internet Resourse">Success Criterion 3.1.6</a>.</p>
+    <p>The ePub 3.2 specification specifically provides a mechanism for adding phonetic markup to words and phrases that a text to speech synthesiser (<abbr>TTS</abbr>) is likely to mispronounce or for which pronunciation may be ambiguous based on the spelling. This ePub is currently woefully inadequate in implementing such markup.</p>
+    <p>Presently I am not aware of any ePub viewers that actually implement this part of the ePub 3.2 standard but I still want to provide the proper phonetic markup so that if and when a viewer does support it, this ePub will already be properly tagged.</p>
+  </section>
+  <section id="ligatures" aria-labelledby="ligatures.label">
+    <h2 id="ligatures.label">&#8216;Æ&#8217; and &#8216;Œ&#8217; Ligatures</h2>
+    <p>Journal of Mammalogy Volume 1 made heavy use of the &#8216;æ&#8217; ligature and some use of the &#8216;œ&#8217; ligature. These ligatures can cause the same issues for some users that italicized text causes.</p>
+    <p>It is the <em>opinion</em> of Pipfrosch Press that ePub viewers should have a setting that automatically expands those ligatures but Pipfrosch Press is also aware that having an <em>opinion</em> does not actually mitigate the resulting access barrier for impacted users.</p>
+    <p>This is not something can be solved with a <abbr>CSS</abbr> declaration. A version of this ePub with those ligatures expanded&#8212;along with the previously mentioned <code>css/noitalics.css</code> style sheet already applied&#8212;will be available from the Pipfrosch Press website.</p>
+  </section>
+  <section id="highcontrast" aria-labelledby="highcontrast.label">
+    <h2 id="highcontrast.label">High Contrast Text</h2>
+    <p>For some users, including many dyslexic users but also others, too much contrast between the text and the background can be an accessibility barrier that increases difficulty in reading and reduces comprehension.</p>
+    <p>Pipfrosch Press does not define a text color or background color for the main content, doing so would interfere with the operation of &#8216;night mode&#8217; with some ePub viewers. However it is relatively easy to set.</p>
+    <section id="highcontrast.solution" aria-labelledby="highcontrast.solution.label">
+      <h3 id="highcontrast.solution.label">High Contrast Text Text Solution</h3>
+      <p>The ePub viewer really should allow the user to define the text color and background color but in the event the ePub viewer a users uses does not and the contrast is too high, add the following to the <code>css/a11y.css</code> file:</p>
+<div class="prewrap">body {
+  color: #222222;
+  background-color: #ededed;
+}</div>
+      <p>That combination of nearly but not quite black on top of a light gray background works very for me, but of course you can adjust the colors as needed.</p>
+    </section>
+  </section>
+</section>
+</body>
+</html>

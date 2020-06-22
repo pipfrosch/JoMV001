@@ -1,0 +1,59 @@
+aside.newnames {
+  text-align: center;
+}
+
+h2.index {
+  text-align: center;
+}
+
+ul.index {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.index li {
+  padding-left: 1.5em;
+  text-indent:-1.5em;
+  margin-top: 0em;
+  margin-bottom: 0.1em;
+}
+
+span.ixlist span:not(:last-child)::after {
+  content: ";";
+}
+
+span.ixlist span:last-child::after {
+  content: ".";
+}
+
+span.pglist span:not(:last-child)::after {
+  content: ",";
+}
+
+span.pglist span:last-child::after {
+  content: ".";
+}
+
+span.dupe {
+  color: #5b616b;
+}
+
+span.ixlist span.pglist span:last-child::after {
+  content: "";
+}
+
+span.ixlist span.pglist::after {
+  content: "";
+}
+
+span.indname::after {
+  content: ",";
+}
+
+span.ixlist span.indname::after {
+  content: ",";
+}
+
+span.ixlist span.taxon::after {
+  content: "";
+}

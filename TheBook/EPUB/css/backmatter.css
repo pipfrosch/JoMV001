@@ -1,0 +1,59 @@
+span.wiktionary {
+  font-style: italic;
+}
+
+span.wiktionary::before {
+  content: "(";
+}
+
+span.wiktionary::after {
+  content: ")";
+}
+
+p.NH {
+  text-align: right;
+  padding-right: 2em;
+  font-style: italic;
+}
+
+#brh2 {
+  text-align: center;
+}
+
+h2.time {
+  text-align: center;
+}
+
+h3.time {
+  text-align: center;
+}
+
+#bylaws h2 {
+  text-align: center;
+}
+
+#bylaws h3 {
+  text-align: center;
+  font-style: italic;
+}
+
+#bylaws span.sect {
+  font-style: italic;
+}
+
+#rules h2 {
+  text-align: center;
+}
+
+#rules h3 {
+  text-align: center;
+  font-style: italic;
+}
+
+#council tr td:first-child {
+  padding-right: 1em;
+}
+
+dl.committee dt {
+  font-style: italic;
+}

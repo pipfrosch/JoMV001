@@ -1,0 +1,34 @@
+section.changelog {
+  font-family: 'Fira Mono', 'Andale Mono', 'Lucida Mono EF', 'Monaco', 'Noto Sans Mono', monospace;
+  font-weight: 500;
+}
+
+section.changelog h1 {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section.changelog h2 {
+  text-align: left;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section.changelog span.dash {
+  font-weight: 700;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section.changelog p {
+  margin-top: 1em;
+  padding-top: 0;
+  white-space: pre-wrap;
+}

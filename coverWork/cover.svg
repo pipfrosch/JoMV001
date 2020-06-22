@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.1"
+     width="1072"
+     height="1448"
+     viewBox="0 0 1072 1448">
+
+<!-- dcdcdc gainsboro -->
+<path fill="honeydew" stroke="none" d="M0,0
+  l1072,0
+  l0,1448
+  l-1072,0z
+"/>
+
+<g id="pronghorn">
+<image xlink:href="pronghorn-cropped.jpg" height="592" width="858" x="107" y="360"/>
+
+<text x="945" y="915" font-size="50" text-anchor="end" dominant-baseline="central" fill="white" fill-opacity=".75" font-weight="400" font-style="italic" font-family="Playfair Display">TDW</text>
+</g>
+
+<text x="536" y="60" font-size="70" text-anchor="middle" dominant-baseline="central" fill="black" font-weight="bold" font-family="Helvetica">Journal</text>
+<text x="536" y="125" font-size="50" text-anchor="middle" dominant-baseline="central" fill="black" font-weight="bold" font-family="Helvetica">of</text>
+<text x="536" y="200" font-size="110" text-anchor="middle" dominant-baseline="central" fill="black" font-weight="bold" font-family="Helvetica">Mammalogy</text>
+<text x="536" y="305" font-size="58" text-anchor="middle" dominant-baseline="central" fill="black" font-family="Helvetica">Volume 1 Numbers 1–5</text>
+
+
+<text x="536" y="1000" font-size="40" text-anchor="middle" dominant-baseline="central" fill="black" font-style="italic" font-family="Philosopher">originally published by the</text>
+<text x="536" y="1082" font-size="57" text-anchor="middle" dominant-baseline="central" fill="black" font-family="Helvetica">American Society of Mammalogists</text>
+<text x="536" y="1170" font-size="60" text-anchor="middle" dominant-baseline="central" fill="black" font-family="Helvetica">1919–1920</text>
+
+<text x="536" y="1255" font-size="40" text-anchor="middle" dominant-baseline="central" fill="black" font-style="italic" font-family="Philosopher">with added supplemental content</text>
+
+<!-- path fill="none" stroke="black" d="M256,1300 l0,100"/ -->
+<!-- path fill="none" stroke="black" d="M816,1300 l0,100"/ -->
+
+<image xlink:href="MonoLogo.svg" height="82.7" width="120" x="233" y="1315"/>
+<text x="559" y="1365" font-size="45" text-anchor="middle" dominant-baseline="central" fill="black" font-style="italic" font-family="Helvetica">ePub by Pipfrosch Press</text>
+</svg>
