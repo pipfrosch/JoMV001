@@ -1,0 +1,67 @@
+Photograph License Agreement
+============================
+
+This agreement is between Michael A. Peters of Pipfrosch Press and Carnivore
+ecologist Tyus D. Williams for the non-exclusive use of one his photographs as
+part of the cover image for the Pipfrosch Press ePub publication referenced
+below.
+
+All rights to the photograph remain with the photographer.
+
+
+ePub Publication
+----------------
+
+The ePub Publication is a transcription of the Journal of Mammalogy Volume 1,
+originally published from 1919-1920 in 5 Numbers (issues) by the Society of
+American Mammalogists.
+
+The specific ePub has a `dc:identifier id="prng-uuid"` value of
+
+    2170060d-e36c-49b7-8640-e501d682ef45
+
+This agreement is limited to the use of the image with that specific ePub.
+
+
+Image
+-----
+
+The photograph being licensed is the second photo in the twitter post
+
+https://twitter.com/sciencewithtyus/status/1270770036832038912
+
+
+Image Use
+---------
+
+The image will be used as part of the the cover image for the ePub previously
+mentioned. The entire cover image (including title of the ePub publication) may
+also be used on websites and digital catalogs that reference the ePub
+publication
+
+
+Photographer Credit
+-------------------
+
+A visible watermark containing the initials of the photographer (TDW) will
+be present on the image as used.
+
+The photographer will be properly referenced as "Tyus D. Williams" in the
+machine-readable ePub metadata using Dublin Core, the standard for ePub 3
+machine readable metadata.
+
+The photographer will be credited with full name within the ePub itself,
+including a short biography of his work as a scientist and a science
+communicator along with a hyperlink to his website and/or social media
+profiles, at his discrection.
+
+
+Compensation
+------------
+
+The photographer will be compensated USD [redacted] for use of his photograph as
+described above.
+
+
+
+
