@@ -2,7 +2,7 @@
 
 CWD=`pwd`
 
-TMP=`mktemp -d /tmp/JOMV1.XXXXXXXX`
+TMP=`mktemp -d /tmp/JOMV001.XXXXXXXX`
 
 pushd ${TMP}
 
@@ -27,7 +27,7 @@ cd ../..
 echo -n application/epub+zip >mimetype
 
 zip -r -X Book.zip mimetype META-INF EPUB
-mv Book.zip JoM-V1.kepub.epub
+mv Book.zip JoM-V001.kepub.epub
 
 #dyslexia friendly version
 find . -type f -print |grep "\.xhtml$" |while read file; do
@@ -41,15 +41,15 @@ done
 rm -f tmp.sed
 cat EPUB/css/noitalics.css >> EPUB/css/a11y.css
 zip -r -X Book.zip mimetype META-INF EPUB
-mv Book.zip JoM-V1-noitalics.kepub.epub
+mv Book.zip JoM-V001-noitalics.kepub.epub
 
 # other versions here
 
-sh ../tools/epubcheck.sh JoM-V1.kepub.epub
+sh ../tools/epubcheck.sh JoM-V001.kepub.epub
 
 if hash ace 2>/dev/null; then
   if [ ! -f ${CWD}/AceReport/noace.tmp ]; then
-    ace -f -s -o AceReport JoM-V1.kepub.epub
+    ace -f -s -o AceReport JoM-V001.kepub.epub
     rm -rf ${CWD}/AceReport/data
     [ ! -d ${CWD}/AceReport ] && mkdir ${CWD}/AceReport
     mv AceReport/data ${CWD}/AceReport/
@@ -60,8 +60,8 @@ if hash ace 2>/dev/null; then
   fi
 fi
 
-mv JoM-V1.kepub.epub ${CWD}/
-mv JoM-V1-noitalics.kepub.epub ${CWD}/
+mv JoM-V001.kepub.epub ${CWD}/
+mv JoM-V001-noitalics.kepub.epub ${CWD}/
 
 popd
 
