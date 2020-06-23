@@ -80,7 +80,7 @@ def createEntry(atom, xml):
     root.appendChild(node)
     # get the UUID
     try:
-        opfuuid = datenode = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
+        opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
     except:
         print ("Could not find the dc:identifier from OPF file.")
         sys.exit(1)
@@ -96,6 +96,17 @@ def createEntry(atom, xml):
     author = mydom.createElement('author')
     author.appendChild(node)
     root.appendChild(author)
+    # published date
+    try:
+        datenode = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'date')[0]
+    except:
+        print ("Could not find the dc:date from OPF file.")
+        sys.exit(1)
+    nodevalue = datenode.firstChild.nodeValue
+    text = mydom.createTextNode(nodevalue)
+    node = mydom.createElement('published')
+    node.appendChild(text)
+    root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
     string = '\n'.join([x for x in string.split("\n") if x.strip()!=''])
