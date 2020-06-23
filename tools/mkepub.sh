@@ -14,7 +14,9 @@ git checkout Alpha2
 cd TheBook/EPUB
 
 python3 ../../tools/updateTimestamp.py content.opf
-timestamp=`python3 ../../tools/getTimestamp.py content.opf`
+#timestamp=`python3 ../../tools/getTimestamp.py content.opf`
+python3 ../../tools/generateOPDS.py ../../foo.atom
+
 cd fonts
 rm -f .gitignore
 cp -p /usr/local/ePubFonts/ClearSans-BoldItalic-wlatin.ttf .
