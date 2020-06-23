@@ -7,8 +7,11 @@ TMP=`mktemp -d /tmp/JOMV001.XXXXXXXX`
 pushd ${TMP}
 
 git clone https://github.com/pipfrosch/JoMV001.git
+cd JoMV001
+# Switch to Alpha2 branch
+git checkout Alpha2
 
-cd JoMV001/TheBook/EPUB
+cd TheBook/EPUB
 
 python3 ../../tools/updateTimestamp.py content.opf
 cd fonts
