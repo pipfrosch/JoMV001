@@ -93,7 +93,7 @@ def createEntry(atom, xml):
     text = mydom.createTextNode('American Society of Mammalogists')
     node = mydom.createElement('name')
     node.appendChild(text)
-    author = mydom.createElemet('author')
+    author = mydom.createElement('author')
     author.appendChild(node)
     root.appendChild(author)
     # dump to file
