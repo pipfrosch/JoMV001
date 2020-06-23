@@ -11,6 +11,12 @@ def showUsage():
     sys.exit(1)
 
 def createEntry(atom, xml):
+    txt = os.path.basename(atom)
+    jomstring = txt.split(".")[0]
+    jomcatalogstring = "JoM"
+    if "-noitalics" in atom:
+        jomstring += "-noitalics"
+        jomcatalogstring += "-noitalics"
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
     # root.setAttribute('xml:lang', xmllang)
@@ -148,18 +154,18 @@ def createEntry(atom, xml):
     node = mydom.createElement('link')
     node.setAttribute('type', 'application/atom+xml;type=entry;profile=opds-catalog')
     node.setAttribute('rel', 'self')
-    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM-V001.atom')
+    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/' + jomstring + '.atom')
     root.appendChild(node)
     node = mydom.createElement('link')
     node.setAttribute('type', 'application/epub+zip')
     node.setAttribute('rel', 'http://opds-spec.org/acquisition')
-    node.setAttribute('href', 'https://epub.pipfrosch.com/JoM/JoM-V001.kepub.epub')
+    node.setAttribute('href', 'https://epub.pipfrosch.com/JoM/' + jomstring + '.kepub.epub')
     root.appendChild(node)
     node = mydom.createElement('link')
     node.setAttribute('type', 'application/atom+xml;profile=opds-catalog;kind=acquisition')
     node.setAttribute('rel', 'http://www.feedbooks.com/opds/same_author')
     node.setAttribute('title', 'More offering from Journal of Mammalogy')
-    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM.atom')
+    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/' + jomcatalogstring + '.atom')
     root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
