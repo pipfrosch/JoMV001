@@ -14,9 +14,8 @@ git checkout Alpha2
 cd TheBook/EPUB
 
 python3 ../../tools/updateTimestamp.py content.opf
-#timestamp=`python3 ../../tools/getTimestamp.py content.opf`
-python3 ../../tools/generateOPDS.py content.opf ${CWD}/foo-noitalics.atom
-exit 0
+python3 ../../tools/generateOPDS.py content.opf ${CWD}/JoM-V001.atom
+python3 ../../tools/generateOPDS.py content.opf ${CWD}/JoM-V001-noitalics.atom
 
 cd fonts
 rm -f .gitignore
@@ -67,8 +66,10 @@ if hash ace 2>/dev/null; then
   fi
 fi
 
-mv JoM-V001.kepub.epub ${CWD}/opds/
-mv JoM-V001-noitalics.kepub.epub ${CWD}/opds/
+mv JoM-V001.kepub.epub ${CWD}/
+mv JoM-V001-noitalics.kepub.epub ${CWD}/
+mv JoM-V001.atom ${CWD}/opds/
+mv JoM-V001.atom-noitalcs.atom ${CWD}/opds/
 
 popd
 
