@@ -33,14 +33,6 @@ def getCurrentTimestamp(xml):
     now = pytz.utc.localize(datetime.datetime.utcnow())
     return now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-def getPubDate(xml):
-    try:
-        datenode = mydom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'date')[0]
-    except:
-        now = pytz.utc.localize(datetime.datetime.utcnow())
-        return now.strftime("%Y-%m-%d")
-    return datenode.firstChild.nodeValue
-
 def createEntry(atom, xml):
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
@@ -107,6 +99,16 @@ def createEntry(atom, xml):
     node = mydom.createElement('published')
     node.appendChild(text)
     root.appendChild(node)
+    # modified date
+    metalist = metadata.getElementsByTagName('meta')
+    for meta in metalist:
+        if meta.hasAttribute("property") and meta.getAttribute("property") == "dcterms:modified":
+            nodevalue = meta.firstChild.nodeValue
+            text = mydom.createTextNode(nodevalue)
+            node = mydom.createElement('updated')
+            node.appendChild(text)
+            root.appendChild(node)
+            break
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
     string = '\n'.join([x for x in string.split("\n") if x.strip()!=''])
