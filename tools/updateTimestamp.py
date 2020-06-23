@@ -28,7 +28,7 @@ def updateTimestamp(xml):
     try:
         metadata = root.getElementsByTagName('metadata')[0]
     except:
-        print ("Could not find metadata node.");
+        print ("Could not find metadata node.")
         sys.exit(1)
     metalist = metadata.getElementsByTagName('meta')
     for meta in metalist:
