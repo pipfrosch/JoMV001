@@ -10,29 +10,6 @@ def showUsage():
     print ("Usage: " + sys.argv[0] + " path/to/contents.opf path/to/entry.atom")
     sys.exit(1)
 
-def getCurrentTimestamp(xml):
-    try:
-        mydom = minidom.parse(xml)
-    except:
-        print (xml + " is not a valid XML file.")
-        sys.exit(1)
-    try:
-        root = mydom.getElementsByTagName('package')[0]
-    except:
-        print ("Could not find root package node.")
-        sys.exit(1)
-    try:
-        metadata = root.getElementsByTagName('metadata')[0]
-    except:
-        print ("Could not find metadata node.")
-        sys.exit(1)
-    metalist = metadata.getElementsByTagName('meta')
-    for meta in metalist:
-        if meta.hasAttribute("property") and meta.getAttribute("property") == "dcterms:modified":
-            return meta.firstChild.nodeValue
-    now = pytz.utc.localize(datetime.datetime.utcnow())
-    return now.strftime("%Y-%m-%dT%H:%M:%SZ")
-
 def createEntry(atom, xml):
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
@@ -130,6 +107,30 @@ def createEntry(atom, xml):
     text = mydom.createTextNode(nodevalue)
     node = mydom.createElement('dcterms:publisher')
     node.appendChild(text)
+    root.appendChild(node)
+    # originally issued
+    text = mydom.createTextNode("1919–1920")
+    node = mydom.createElement('dcterms:issued')
+    node.appendChild(text)
+    root.appendChild(node)
+    # create summary
+    try:
+        description = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'description')[0]
+    except:
+        print ("Could not find dc:description from OPF file.")
+        sys.exit(1)
+    nodevalue = description.firstChild.nodeValue
+    text = mydom.createTextNode(nodevalue)
+    node = mydom.createElement('summary')
+    node.appendChild(text)
+    root.appendChild(node)
+    # TODO Category
+    # Alternate View
+    node = mydom.createElement('link')
+    node.setAttribute('type', 'text/html')
+    node.setAttribute('rel', 'alternate')
+    node.setAttribute('title', 'View at Pipfrosch Press')
+    node.setAttribute('href', 'https://pipfrosch.com/TODOWHENFINISHED')
     root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
