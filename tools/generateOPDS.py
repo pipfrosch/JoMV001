@@ -42,7 +42,7 @@ def getPubDate(xml):
     return datenode.firstChild.nodeValue
 
 def createEntry(atom, xml):
-    mydom = minidom.parseString('entry')
+    mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
     # root.setAttribute('xml:lang', xmllang)
     root.setAttribute('xmlns', 'http://www.w3.org/2005/Atom')
