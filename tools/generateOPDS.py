@@ -132,6 +132,17 @@ def createEntry(atom, xml):
     node.setAttribute('title', 'View at Pipfrosch Press')
     node.setAttribute('href', 'https://pipfrosch.com/TODOWHENFINISHED')
     root.appendChild(node)
+    # image
+    node = mydom.createElement('link')
+    node.setAttribute('type', 'image/jpeg')
+    node.setAttribute('rel', 'http://opds-spec.org/image')
+    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM-V001.cover.jpg')
+    root.appendChild(node)
+    node = mydom.createElement('link')
+    node.setAttribute('type', 'image/jpeg')
+    node.setAttribute('rel', 'http://opds-spec.org/image/thumbnail')
+    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM-V001.thumbnail.jpg')
+    root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
     string = '\n'.join([x for x in string.split("\n") if x.strip()!=''])
