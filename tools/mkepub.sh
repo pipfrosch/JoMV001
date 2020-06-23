@@ -64,8 +64,8 @@ if hash ace 2>/dev/null; then
   fi
 fi
 
-mv JoM-V001.kepub.epub ${CWD}/
-mv JoM-V001-noitalics.kepub.epub ${CWD}/
+mv JoM-V001.kepub.epub ${CWD}/opds/
+mv JoM-V001-noitalics.kepub.epub ${CWD}/opds/
 
 popd
 
