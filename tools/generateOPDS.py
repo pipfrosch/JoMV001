@@ -80,7 +80,7 @@ def createEntry(atom, xml):
     root.appendChild(node)
     # get the UUID
     try:
-        opfuuid = datenode = mydom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
+        opfuuid = datenode = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
     except:
         print ("Could not find the dc:identifier from OPF file.")
         sys.exit(1)
