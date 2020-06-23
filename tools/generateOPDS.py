@@ -130,7 +130,7 @@ def createEntry(atom, xml):
     node.setAttribute('type', 'text/html')
     node.setAttribute('rel', 'alternate')
     node.setAttribute('title', 'View at Pipfrosch Press')
-    node.setAttribute('href', 'https://pipfrosch.com/TODOWHENFINISHED')
+    node.setAttribute('href', 'https://pipfrosch.com/jom-volume-1-preview-1/')
     root.appendChild(node)
     # image
     node = mydom.createElement('link')
@@ -142,6 +142,24 @@ def createEntry(atom, xml):
     node.setAttribute('type', 'image/jpeg')
     node.setAttribute('rel', 'http://opds-spec.org/image/thumbnail')
     node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM-V001.thumbnail.jpg')
+    root.appendChild(node)
+    # acquisition links
+    #
+    node = mydom.createElement('link')
+    node.setAttribute('type', 'application/atom+xml;type=entry;profile=opds-catalog')
+    node.setAttribute('rel', 'self')
+    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM-V001.atom')
+    root.appendChild(node)
+    node = mydom.createElement('link')
+    node.setAttribute('type', 'application/epub+zip')
+    node.setAttribute('rel', 'http://opds-spec.org/acquisition')
+    node.setAttribute('href', 'https://epub.pipfrosch.com/JoM/JoM-V001.kepub.epub')
+    root.appendChild(node)
+    node = mydom.createElement('link')
+    node.setAttribute('type', 'application/atom+xml;profile=opds-catalog;kind=acquisition')
+    node.setAttribute('rel', 'http://www.feedbooks.com/opds/same_author')
+    node.setAttribute('title', 'More offering from Journal of Mammalogy')
+    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM.atom')
     root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
