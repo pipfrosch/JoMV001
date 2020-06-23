@@ -14,8 +14,7 @@ def createEntry(atom, xml):
     txt = os.path.basename(atom)
     jomstring = txt.split(".")[0]
     jomcatalogstring = "JoM"
-    if "-noitalics" in atom:
-        jomstring += "-noitalics"
+    if "-noitalics" in jomstring:
         jomcatalogstring += "-noitalics"
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
