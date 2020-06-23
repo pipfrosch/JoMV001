@@ -109,6 +109,28 @@ def createEntry(atom, xml):
             node.appendChild(text)
             root.appendChild(node)
             break
+    # get language
+    try:
+        language = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'language')[0]
+    except:
+        print ("Could not find the dc:language from OPF file.")
+        sys.exit(1)
+    nodevalue = language.firstChild.nodeValue
+    text = mydom.createTextNode(nodevalue)
+    node = mydom.createElement('dcterms:language')
+    node.appendChild(text)
+    root.appendChild(node)
+    # get publisher
+    try:
+        publisher = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'publisher')[0]
+    except:
+        print ("Could not find the dc:publisher from OPF file.")
+        sys.exit(1)
+    nodevalue = publisher.firstChild.nodeValue
+    text = mydom.createTextNode(nodevalue)
+    node = mydom.createElement('dcterms:publisher')
+    node.appendChild(text)
+    root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
     string = '\n'.join([x for x in string.split("\n") if x.strip()!=''])
