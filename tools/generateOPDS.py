@@ -7,7 +7,7 @@ import pytz
 from xml.dom import minidom
 
 def showUsage():
-    print ("Usage: " + sys.argv[0] + " path/to/contents.opf epubFilename")
+    print ("Usage: " + sys.argv[0] + " path/to/contents.opf path/to/entry.atom")
     sys.exit(1)
 
 def getCurrentTimestamp(xml):
@@ -95,8 +95,6 @@ def main():
     if not opf.exists():
         showUsage()
     createEntry(sys.argv[2], sys.argv[1])
-    rn = getCurrentTimestamp(sys.argv[1])
-    print (rn)
 
 if __name__ == "__main__":
     main()
