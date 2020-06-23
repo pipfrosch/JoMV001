@@ -84,11 +84,18 @@ def createEntry(atom, xml):
     except:
         print ("Could not find the dc:identifier from OPF file.")
         sys.exit(1)
-    nodevalue = 'urn:uuid' + opfuuid.firstChild.nodeValue
+    nodevalue = 'urn:uuid:' + opfuuid.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
     node = mydom.createElement('id')
     node.appendChild(text)
     root.appendChild(node)
+    # author
+    text = mydom.createTextNode('American Society of Mammalogists')
+    node = mydom.createElement('name')
+    node.appendChild(text)
+    author = mydom.createElemet('author')
+    author.appendChild(node)
+    root.appendChild(author)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
     string = '\n'.join([x for x in string.split("\n") if x.strip()!=''])
