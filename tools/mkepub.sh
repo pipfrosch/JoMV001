@@ -15,7 +15,7 @@ cd TheBook/EPUB
 
 python3 ../../tools/updateTimestamp.py content.opf
 #timestamp=`python3 ../../tools/getTimestamp.py content.opf`
-python3 ../../tools/generateOPDS.py ../../foo.atom
+python3 ../../tools/generateOPDS.py ${CWD}/foo.atom
 
 cd fonts
 rm -f .gitignore
