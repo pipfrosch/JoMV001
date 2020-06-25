@@ -78,6 +78,7 @@ def createEntry(atom, xml):
     author.appendChild(node)
     text = mydom.createTextNode('https://www.mammalogy.org/')
     node = mydom.createElement('uri')
+    node.appendChild(text)
     author.appendChild(node)
     root.appendChild(author)
     # published date
