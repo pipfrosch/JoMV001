@@ -12,6 +12,10 @@ def showUsage():
     print ("Usage: " + sys.argv[0] + " path/to/contents.opf path/to/entry.atom")
     sys.exit(1)
 
+def standardizeDateTime(string):
+    dto = datetime.datetime(string)
+    return dto.strftime("%Y-%m-%dT%H:%M:%SZ")
+
 def createEntry(atom, xml):
     txt = os.path.basename(atom)
     jomstring = txt.split(".")[0]
@@ -81,8 +85,9 @@ def createEntry(atom, xml):
     except:
         print ("Could not find the dc:date from OPF file.")
         sys.exit(1)
-    nodevalue = datenode.firstChild.nodeValue  + 'T00:00:00Z'
-    text = mydom.createTextNode(nodevalue)
+    nodevalue = datenode.firstChild.nodeValue
+    timestring = standardizeDateTime(nodevalue)
+    text = mydom.createTextNode(timestring)
     node = mydom.createElement('published')
     node.appendChild(text)
     root.appendChild(node)
@@ -91,7 +96,8 @@ def createEntry(atom, xml):
     for meta in metalist:
         if meta.hasAttribute("property") and meta.getAttribute("property") == "dcterms:modified":
             nodevalue = meta.firstChild.nodeValue
-            text = mydom.createTextNode(nodevalue)
+            timestring = standardizeDateTime(nodevalue)
+            text = mydom.createTextNode(timestring)
             node = mydom.createElement('updated')
             node.appendChild(text)
             root.appendChild(node)
