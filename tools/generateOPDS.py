@@ -5,6 +5,7 @@ import pathlib
 import datetime
 import pytz
 from xml.dom import minidom
+from dateutil import parser
 
 # check output with https://opds-validator.appspot.com/
 
@@ -13,7 +14,7 @@ def showUsage():
     sys.exit(1)
 
 def standardizeDateTime(string):
-    dto = datetime.datetime(string)
+    dto = parser.parse(string)
     return dto.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 def createEntry(atom, xml):
