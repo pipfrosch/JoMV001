@@ -81,7 +81,7 @@ def createEntry(atom, xml):
     except:
         print ("Could not find the dc:date from OPF file.")
         sys.exit(1)
-    nodevalue = datenode.firstChild.nodeValue  + '00:00:00Z'
+    nodevalue = datenode.firstChild.nodeValue  + 'T00:00:00Z'
     text = mydom.createTextNode(nodevalue)
     node = mydom.createElement('published')
     node.appendChild(text)
