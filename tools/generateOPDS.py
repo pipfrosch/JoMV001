@@ -6,6 +6,8 @@ import datetime
 import pytz
 from xml.dom import minidom
 
+# check output with https://opds-validator.appspot.com/
+
 def showUsage():
     print ("Usage: " + sys.argv[0] + " path/to/contents.opf path/to/entry.atom")
     sys.exit(1)
@@ -69,6 +71,9 @@ def createEntry(atom, xml):
     node.appendChild(text)
     author = mydom.createElement('author')
     author.appendChild(node)
+    text = mydom.createTextNode('https://www.mammalogy.org/')
+    node = mydom.createElement('uri')
+    author.appendChild(node)
     root.appendChild(author)
     # published date
     try:
@@ -76,7 +81,7 @@ def createEntry(atom, xml):
     except:
         print ("Could not find the dc:date from OPF file.")
         sys.exit(1)
-    nodevalue = datenode.firstChild.nodeValue
+    nodevalue = datenode.firstChild.nodeValue  + '00:00:00Z'
     text = mydom.createTextNode(nodevalue)
     node = mydom.createElement('published')
     node.appendChild(text)
