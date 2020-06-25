@@ -22,11 +22,11 @@ def createEntry(atom, xml):
     root = mydom.getElementsByTagName('entry')[0]
     # root.setAttribute('xml:lang', xmllang)
     root.setAttribute('xmlns', 'http://www.w3.org/2005/Atom')
-    root.setAttribute('xmlns:thr', 'http://purl.org/syndication/thread/1.0')
+    #root.setAttribute('xmlns:thr', 'http://purl.org/syndication/thread/1.0')
     root.setAttribute('xmlns:dcterms', 'http://purl.org/dc/terms/')
-    root.setAttribute('xmlns:opds', 'http://opds-spec.org/2010/catalog')
-    root.setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-    root.setAttribute('xmlns:schema', 'http://schema.org/')
+    #root.setAttribute('xmlns:opds', 'http://opds-spec.org/2010/catalog')
+    #root.setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+    #root.setAttribute('xmlns:schema', 'http://schema.org/')
     # get the OPF dom
     try:
         opfdom = minidom.parse(xml)
