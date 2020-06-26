@@ -181,7 +181,7 @@ def createEntry(atom, xml):
     node = mydom.createElement('link')
     node.setAttribute('type', 'application/atom+xml;type=entry;profile=opds-catalog')
     node.setAttribute('rel', 'self')
-    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/' + jomstring + '.atom')
+    node.setAttribute('href', '/JoM/' + jomstring + '.atom')
     root.appendChild(node)
     node = mydom.createElement('link')
     node.setAttribute('type', 'application/epub+zip')
@@ -200,9 +200,6 @@ def createEntry(atom, xml):
     fh = open(atom, "w")
     fh.write(string)
     fh.close()
-    #if not xmllang == booklang:
-    #    print ('Warning: The xml:lang ' + xmllang + ' differs from the book lang ' + booklang)
-    #    print ('This might be okay but could be accidental.')
 
 def main():
     if len(sys.argv) != 3:
