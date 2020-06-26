@@ -28,7 +28,7 @@ def createEntry(atom, xml):
     # root.setAttribute('xml:lang', xmllang)
     root.setAttribute('xmlns', 'http://www.w3.org/2005/Atom')
     #root.setAttribute('xmlns:thr', 'http://purl.org/syndication/thread/1.0')
-    root.setAttribute('xmlns:dcterms', 'http://purl.org/dc/terms/')
+    root.setAttribute('xmlns:dc', 'http://purl.org/dc/terms/')
     #root.setAttribute('xmlns:opds', 'http://opds-spec.org/2010/catalog')
     #root.setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     #root.setAttribute('xmlns:schema', 'http://schema.org/')
@@ -60,13 +60,17 @@ def createEntry(atom, xml):
     node.appendChild(text)
     root.appendChild(node)
     # get the UUID
-    try:
-        opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
-    except:
-        print ("Could not find the dc:identifier from OPF file.")
-        sys.exit(1)
-    nodevalue = 'urn:uuid:' + opfuuid.firstChild.nodeValue
-    text = mydom.createTextNode(nodevalue)
+    #try:
+    #    opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
+    #except:
+    #    print ("Could not find the dc:identifier from OPF file.")
+    #    sys.exit(1)
+    #nodevalue = 'urn:uuid:' + opfuuid.firstChild.nodeValue
+    stringlist = list('urn:uuid:bc955e92-abb4-4f8f-8929-839b7235a5ae')
+    if "-noitalics" in jomstring:
+        stringlist[28] = "9"
+    string = ''.join(stringlist)
+    text = mydom.createTextNode(string)
     node = mydom.createElement('id')
     node.appendChild(text)
     root.appendChild(node)
@@ -96,7 +100,7 @@ def createEntry(atom, xml):
     # modified date
     metalist = metadata.getElementsByTagName('meta')
     for meta in metalist:
-        if meta.hasAttribute("property") and meta.getAttribute("property") == "dcterms:modified":
+        if meta.hasAttribute("property") and meta.getAttribute("property") == "dc:modified":
             nodevalue = meta.firstChild.nodeValue
             timestring = standardizeDateTime(nodevalue)
             text = mydom.createTextNode(timestring)
@@ -112,7 +116,18 @@ def createEntry(atom, xml):
         sys.exit(1)
     nodevalue = language.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
-    node = mydom.createElement('dcterms:language')
+    node = mydom.createElement('dc:language')
+    node.appendChild(text)
+    root.appendChild(node)
+    # get the UUID
+    try:
+        opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
+    except:
+        print ("Could not find the dc:identifier from OPF file.")
+        sys.exit(1)
+    nodevalue = opfuuid.firstChild.nodeValue
+    text = mydom.createTextNode(nodevalue)
+    node = mydom.createElement('dc:identifier')
     node.appendChild(text)
     root.appendChild(node)
     # get publisher
@@ -123,12 +138,12 @@ def createEntry(atom, xml):
         sys.exit(1)
     nodevalue = publisher.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
-    node = mydom.createElement('dcterms:publisher')
+    node = mydom.createElement('dc:publisher')
     node.appendChild(text)
     root.appendChild(node)
     # originally issued
     text = mydom.createTextNode("1919–1920")
-    node = mydom.createElement('dcterms:issued')
+    node = mydom.createElement('dc:issued')
     node.appendChild(text)
     root.appendChild(node)
     # create summary
@@ -154,12 +169,12 @@ def createEntry(atom, xml):
     node = mydom.createElement('link')
     node.setAttribute('type', 'image/jpeg')
     node.setAttribute('rel', 'http://opds-spec.org/image')
-    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM-V001.cover.jpg')
+    node.setAttribute('href', '/JoM/JoM-V001.cover.jpg')
     root.appendChild(node)
     node = mydom.createElement('link')
     node.setAttribute('type', 'image/jpeg')
     node.setAttribute('rel', 'http://opds-spec.org/image/thumbnail')
-    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/JoM-V001.thumbnail.jpg')
+    node.setAttribute('href', '/JoM/JoM-V001.thumbnail.jpg')
     root.appendChild(node)
     # acquisition links
     #
@@ -177,7 +192,7 @@ def createEntry(atom, xml):
     node.setAttribute('type', 'application/atom+xml;profile=opds-catalog;kind=acquisition')
     node.setAttribute('rel', 'http://www.feedbooks.com/opds/same_author')
     node.setAttribute('title', 'More offering from Journal of Mammalogy')
-    node.setAttribute('href', 'https://opds.pipfrosch.com/JoM/' + jomcatalogstring + '.atom')
+    node.setAttribute('href', '/JoM/' + jomcatalogstring + '.atom')
     root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
