@@ -233,7 +233,7 @@ def main():
     cwd = os.getcwd()
     #opffile = pathlib.Path(sys.argv[1])
     opffile = os.path.join(cwd, sys.argv[1])
-    if not opffile.exists():
+    if not os.path.exists(opffile):
         showUsage()
     jsonfile = pathlib.Path(sys.argv[2])
     if not jsonfile.exists():
