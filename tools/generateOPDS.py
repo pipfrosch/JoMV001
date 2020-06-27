@@ -31,6 +31,8 @@ def createEntry(cwd, jsonfile, opffile):
         print(jsonfile + ' does not appear to be valid JSON.')
         sys.exit(1)
     jsonkeys = jsondata.keys()
+    print(opffile)
+    sys.exit(1)
     try:
         opfdom = minidom.parse(opffile)
     except:

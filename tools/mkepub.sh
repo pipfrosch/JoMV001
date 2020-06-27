@@ -21,7 +21,7 @@ cat epub.json |sed -e s?"\.atom"?"-noitalics.atom"?g > epub-noitalics.json
 popd
 
 python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub.json
-python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub-noitalics.json
+#python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub-noitalics.json
 
 exit 0
 rm -f ${CWD}/opds/epub-noitalics.json
