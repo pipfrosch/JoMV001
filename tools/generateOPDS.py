@@ -135,11 +135,6 @@ def createEntry(cwd, jsonfile, opffile):
         print('Value for opdspath key in ' + jsonfile + ' is not a string.')
         sys.exit(1)
     opdspath = jsondata.get('opdspath')
-#    txt = os.path.basename(atom)
-#    jomstring = txt.split(".")[0]
-#    jomcatalogstring = "JoM"
-#    if '-noitalics' in jomstring:
-#        jomcatalogstring += '-noitalics'
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
     root.setAttribute('xmlns', 'http://www.w3.org/2005/Atom')
@@ -193,16 +188,6 @@ def createEntry(cwd, jsonfile, opffile):
             uri.appendChild(text)
             authornode.appendChild(uri)
         root.appendChild(authornode)
-#    text = mydom.createTextNode('American Society of Mammalogists')
-#    node = mydom.createElement('name')
-#    node.appendChild(text)
-#    author = mydom.createElement('author')
-#    author.appendChild(node)
-#    text = mydom.createTextNode('https://www.mammalogy.org/')
-#    node = mydom.createElement('uri')
-#    node.appendChild(text)
-#    author.appendChild(node)
-#    root.appendChild(author)
     # published date
     try:
         datenode = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'date')[0]
@@ -217,15 +202,20 @@ def createEntry(cwd, jsonfile, opffile):
     root.appendChild(node)
     # modified date
     metalist = metadata.getElementsByTagName('meta')
+    found = False
     for meta in metalist:
-        if meta.hasAttribute('property') and meta.getAttribute('property') == 'dc:modified':
+        if meta.hasAttribute('property') and meta.getAttribute('property') == 'dc:mmodified':
             nodevalue = meta.firstChild.nodeValue
             timestring = standardizeDateTime(nodevalue)
             text = mydom.createTextNode(timestring)
             node = mydom.createElement('updated')
             node.appendChild(text)
             root.appendChild(node)
+            found = True
             break
+    if not found:
+        print ('Could not find the dc:modified meta tag in ' + opffile)
+        sys.exit(1)
     # get language
     try:
         language = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'language')[0]
