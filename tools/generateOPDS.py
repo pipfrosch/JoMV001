@@ -10,19 +10,19 @@ from dateutil import parser
 # check output with https://opds-validator.appspot.com/
 
 def showUsage():
-    print ("Usage: " + sys.argv[0] + " path/to/contents.opf path/to/entry.atom")
+    print ('Usage: ' + sys.argv[0] + ' path/to/contents.opf path/to/entry.atom')
     sys.exit(1)
 
 def standardizeDateTime(string):
     dto = parser.parse(string)
-    return dto.strftime("%Y-%m-%dT%H:%M:%SZ")
+    return dto.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 def createEntry(atom, xml):
     txt = os.path.basename(atom)
     jomstring = txt.split(".")[0]
     jomcatalogstring = "JoM"
-    if "-noitalics" in jomstring:
-        jomcatalogstring += "-noitalics"
+    if '-noitalics' in jomstring:
+        jomcatalogstring += '-noitalics'
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
     # root.setAttribute('xml:lang', xmllang)
@@ -36,23 +36,23 @@ def createEntry(atom, xml):
     try:
         opfdom = minidom.parse(xml)
     except:
-        print (xml + " is not a valid XML file.")
+        print ('Either ' + xml + ' does not exist or is not a valid XML file.')
         sys.exit(1)
     try:
         opfroot = opfdom.getElementsByTagName('package')[0]
     except:
-        print ("Could not find root package node.")
+        print ('Could not find root package node.')
         sys.exit(1)
     try:
         metadata = opfroot.getElementsByTagName('metadata')[0]
     except:
-        print ("Could not find metadata node.")
+        print ('Could not find metadata node.')
         sys.exit(1)
     # get the title
     try:
         opftitle = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'title')[0]
     except:
-        print ("Could not extract title from OPF file.")
+        print ('Could not extract title from OPF file.')
         sys.exit(1)
     nodevalue = opftitle.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
@@ -89,7 +89,7 @@ def createEntry(atom, xml):
     try:
         datenode = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'date')[0]
     except:
-        print ("Could not find the dc:date from OPF file.")
+        print ('Could not find the dc:date from OPF file.')
         sys.exit(1)
     nodevalue = datenode.firstChild.nodeValue
     timestring = standardizeDateTime(nodevalue)
@@ -100,7 +100,7 @@ def createEntry(atom, xml):
     # modified date
     metalist = metadata.getElementsByTagName('meta')
     for meta in metalist:
-        if meta.hasAttribute("property") and meta.getAttribute("property") == "dc:modified":
+        if meta.hasAttribute('property') and meta.getAttribute('property') == 'dc:modified':
             nodevalue = meta.firstChild.nodeValue
             timestring = standardizeDateTime(nodevalue)
             text = mydom.createTextNode(timestring)
@@ -112,7 +112,7 @@ def createEntry(atom, xml):
     try:
         language = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'language')[0]
     except:
-        print ("Could not find the dc:language from OPF file.")
+        print ('Could not find the dc:language from OPF file.')
         sys.exit(1)
     nodevalue = language.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
@@ -123,7 +123,7 @@ def createEntry(atom, xml):
     try:
         opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
     except:
-        print ("Could not find the dc:identifier from OPF file.")
+        print ('Could not find the dc:identifier from OPF file.')
         sys.exit(1)
     nodevalue = opfuuid.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
@@ -134,7 +134,7 @@ def createEntry(atom, xml):
     try:
         publisher = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'publisher')[0]
     except:
-        print ("Could not find the dc:publisher from OPF file.")
+        print ('Could not find the dc:publisher from OPF file.')
         sys.exit(1)
     nodevalue = publisher.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
@@ -142,7 +142,7 @@ def createEntry(atom, xml):
     node.appendChild(text)
     root.appendChild(node)
     # originally issued
-    text = mydom.createTextNode("1919–1920")
+    text = mydom.createTextNode('1919–1920')
     node = mydom.createElement('dc:issued')
     node.appendChild(text)
     root.appendChild(node)
@@ -150,7 +150,7 @@ def createEntry(atom, xml):
     try:
         description = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'description')[0]
     except:
-        print ("Could not find dc:description from OPF file.")
+        print ('Could not find dc:description from OPF file.')
         sys.exit(1)
     nodevalue = description.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
@@ -195,9 +195,9 @@ def createEntry(atom, xml):
     node.setAttribute('href', '/JoM/' + jomcatalogstring + '.atom')
     root.appendChild(node)
     # dump to file
-    string = mydom.toprettyxml(indent="  ",newl="\n",encoding="UTF-8").decode()
-    string = '\n'.join([x for x in string.split("\n") if x.strip()!=''])
-    fh = open(atom, "w")
+    string = mydom.toprettyxml(indent='  ',newl='\n',encoding='UTF-8').decode()
+    string = '\n'.join([x for x in string.split('\n') if x.strip()!=''])
+    fh = open(atom, 'w')
     fh.write(string)
     fh.close()
 
@@ -209,5 +209,5 @@ def main():
         showUsage()
     createEntry(sys.argv[2], sys.argv[1])
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
