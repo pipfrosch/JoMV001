@@ -227,7 +227,12 @@ def createEntry(cwd, jsonfile, opffile):
     node = mydom.createElement('dc:language')
     node.appendChild(text)
     root.appendChild(node)
-    # get the UUID
+    # get the ePub unique identifier
+    if opfroot.hasAttribute('Lunique-identifier'):
+        uniqueid = opfroot.getAttribute('unique-identifier')
+    else:
+        print('The root package element lacks a unique-identifier in ' + opffile)
+        sys.exit(1)
     try:
         opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
     except:
