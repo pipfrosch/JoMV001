@@ -96,6 +96,24 @@ def standardizeDateTime(string):
     dto = parser.parse(string)
     return dto.strftime('%Y-%m-%dT%H:%M:%SZ')
 
+def validateLinks(links, jsonfile):
+    if type(links) != list:
+        print('Error in ' + jsonfile + ': The links key in " + jsonfile + " does not point to a valid list.')
+        sys.exit(1)
+    reqatt = ['rel', 'href', 'type']
+    for link in links:
+        if type(link) != dict:
+            print('Error in ' + jsonfile + ': Not all entries in links list are key=value dictionaries.')
+            sys.exit(1)
+        keys = link.keys()
+        for att in reqatt:
+            if att not in keys:
+                print('Error in ' + jsonfile + ': Some dictionaries in links list are missing the ' + att + ' key.')
+                sys.exit(1)
+            if type(link.get(att)) != str:
+                print('Error in ' + jsonfile + ': The links value associated with ' + att + ' is not a string.')
+                sys.exit(1)
+
 #def createEntry(atom, xml):
 def createEntry(cwd, jsonfile, opffile):
     try:
@@ -271,7 +289,7 @@ def createEntry(cwd, jsonfile, opffile):
         node.appendChild(text)
         root.appendChild(node)
     # create summary
-    if 'ssummary' in jsonkeys:
+    if 'summary' in jsonkeys:
         string = jsondata.get('summary')
         if type(string) != str:
             print('The key "summary" does not have a string value in ' + jsonfile)
@@ -292,42 +310,20 @@ def createEntry(cwd, jsonfile, opffile):
         node.appendChild(text)
         root.appendChild(node)
     # TODO Category
-    # Alternate View
-    node = mydom.createElement('link')
-    node.setAttribute('type', 'text/html')
-    node.setAttribute('rel', 'alternate')
-    node.setAttribute('title', 'View at Pipfrosch Press')
-    node.setAttribute('href', 'https://pipfrosch.com/jom-volume-1-preview-1/')
-    root.appendChild(node)
-    # image
-    node = mydom.createElement('link')
-    node.setAttribute('type', 'image/jpeg')
-    node.setAttribute('rel', 'http://opds-spec.org/image')
-    node.setAttribute('href', '/JoM/JoM-V001.cover.jpg')
-    root.appendChild(node)
-    node = mydom.createElement('link')
-    node.setAttribute('type', 'image/jpeg')
-    node.setAttribute('rel', 'http://opds-spec.org/image/thumbnail')
-    node.setAttribute('href', '/JoM/JoM-V001.thumbnail.jpg')
-    root.appendChild(node)
-    # acquisition links
-    #
-    node = mydom.createElement('link')
-    node.setAttribute('type', 'application/atom+xml;type=entry;profile=opds-catalog')
-    node.setAttribute('rel', 'self')
-    node.setAttribute('href', '/JoM/' + jomstring + '.atom')
-    root.appendChild(node)
-    node = mydom.createElement('link')
-    node.setAttribute('type', 'application/epub+zip')
-    node.setAttribute('rel', 'http://opds-spec.org/acquisition')
-    node.setAttribute('href', 'https://epub.pipfrosch.com/JoM/' + jomstring + '.kepub.epub')
-    root.appendChild(node)
-    node = mydom.createElement('link')
-    node.setAttribute('type', 'application/atom+xml;profile=opds-catalog;kind=acquisition')
-    node.setAttribute('rel', 'http://www.feedbooks.com/opds/same_author')
-    node.setAttribute('title', 'More offering from Journal of Mammalogy')
-    node.setAttribute('href', '/JoM/' + jomcatalogstring + '.atom')
-    root.appendChild(node)
+    # links
+    if 'links' not in jsonkeys:
+        print(jsonfile + ' does not specify links.')
+        sys.exit(1)
+    links = jsondata.get("links")
+    validateLinks(links, jsonfile)
+    for link in links:
+        node = mydom.createElement('link')
+        node.setAttribute('rel', link.get('rel'))
+        node.setAttribute('href', link.get('href'))
+        node.setAttribute('type', link.get('type'))
+        if ('title') in link.keys():
+            node.setAttribute('title', link.get('title'))
+        root.appendChild(node)
     # dump to file
     string = mydom.toprettyxml(indent='  ',newl='\n',encoding='UTF-8').decode()
     string = '\n'.join([x for x in string.split('\n') if x.strip()!=''])

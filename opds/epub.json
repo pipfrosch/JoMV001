@@ -12,5 +12,39 @@
     }
   ],
   "issued"   : "1919–1920",
-  "summary"  : "Originally published quarterly during 1919 and 1920, this is the first volume of Journal of Mammalogy containing five different Numbers (issues) including academic articles, reviews of recent literature, and feedback from readers. In this ePub edition, a glossary of terms that is beneficial to non-academic readers as well as some freshly written supplemental content is also included."
+  "summary"  : "Originally published quarterly during 1919 and 1920, this is the first volume of Journal of Mammalogy containing five different Numbers (issues) including academic articles, reviews of recent literature, and feedback from readers. In this ePub edition, a glossary of terms that is beneficial to non-academic readers as well as some freshly written supplemental content is also included.",
+  "links" : [
+    {
+      "rel"   : "alternate",
+      "href"  : "https://pipfrosch.com/jom-volume-1-preview-1/",
+      "type"  : "text/html",
+      "title" : "View at Pipfrosch Press Website"
+    },
+    {
+      "rel"   : "http://opds-spec.org/image",
+      "href"  : "/JoM/JoM-V001.cover.jpg",
+      "type"  : "image/jpeg"
+    },
+    {
+      "rel"   : "http://opds-spec.org/image/thumbnail",
+      "href"  : "/JoM/JoM-V001.thumbnail.jpg",
+      "type"  : "image/jpeg"
+    },
+    {
+      "rel"   : "self",
+      "href"  : "/JoM/JoM-V001.atom",
+      "type"  : "application/atom+xml;type=entry;profile=opds-catalog"
+    },
+    {
+      "rel"   : "http://opds-spec.org/acquisition",
+      "href"  : "https://epub.pipfrosch.com/JoM/JoM-V001.kepub.epub"
+      "type"  : "application/epub+zip"
+    },
+    {
+      "rel"   : "http://www.feedbooks.com/opds/same_author",
+      "href"  : "/JoM/JoM.atom",
+      "type"  : "application/atom+xml;profile=opds-catalog;kind=acquisition",
+      "title" : "More offering from Journal of Mammalogy"
+    }
+  ]
 }
