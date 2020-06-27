@@ -17,12 +17,14 @@ cd ../..
 
 #generate atom file
 pushd ${CWD}/opds
-cat epub.json |sed -e s?"\.atom"?"-noitalics.atom"?g > epub-noitalics.json
+cat epub.json |sed -e s?"\.atom"?"-noitalics.atom"?g \
+              |sed -e s?"\.kepub.epub"?"-noitalics.kepub.epub"?g \
+              > epub-noitalics.json
 popd
 
 
-python3 tools/generateOPDS.py content.opf ${CWD}/opds/epub.json
-python3 tools/generateOPDS.py content.opf ${CWD}/opds/epub-noitalics.json
+python3 tools/generateOPDS.py TheBook/EPUB/content.opf ${CWD}/opds/epub.json
+python3 tools/generateOPDS.py TheBook/EPUB/content.opf ${CWD}/opds/epub-noitalics.json
 
 #cat opds/JoM-V001.atom > ${CWD}/JoM-V001.atom
 #cat opds/JoM-V001-noitalics.atom > ${CWD}/JoM-V001-noitalics.atom
