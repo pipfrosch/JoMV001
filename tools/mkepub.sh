@@ -14,8 +14,15 @@ git checkout Alpha2
 cd TheBook/EPUB
 
 python3 ../../tools/updateTimestamp.py content.opf
-python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/JoM-V001.atom
-python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/JoM-V001-noitalics.atom
+
+#generate atom file
+pushd ${CWD}/opds
+cat epub.json |sed -e s?"\.atom"?"-noitalics.atom"?g > epub-noitalics.json
+popd
+
+python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub.json
+python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub-noitalics.json
+rm -f ${CWD}/opds/epub-noitalics.json
 
 cd fonts
 rm -f .gitignore

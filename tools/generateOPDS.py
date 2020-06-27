@@ -10,19 +10,52 @@ from dateutil import parser
 # check output with https://opds-validator.appspot.com/
 
 def showUsage():
-    print ('Usage: ' + sys.argv[0] + ' path/to/contents.opf path/to/entry.atom')
+    print ('Usage: ' + sys.argv[0] + ' path/to/contents.opf path/to/epub.json')
     sys.exit(1)
 
 def standardizeDateTime(string):
     dto = parser.parse(string)
     return dto.strftime('%Y-%m-%dT%H:%M:%SZ')
 
-def createEntry(atom, xml):
-    txt = os.path.basename(atom)
-    jomstring = txt.split(".")[0]
-    jomcatalogstring = "JoM"
-    if '-noitalics' in jomstring:
-        jomcatalogstring += '-noitalics'
+#def createEntry(atom, xml):
+def createEntry(cwd, jsonfile, opffile)
+    try:
+        with open(jsonfile) as f:
+            jsondata = json.load(f)
+    except:
+        print(jsonfile + ' does not appear to be valid JSON.')
+        sys.exit(1)
+    jsonkeys = jsondata.keys()
+    try:
+        opfdom = minidom.parse(opffile)
+    except:
+        print (xml + ' is not a valid OPF file.')
+        sys.exit(1)
+    try:
+        opfroot = opfdom.getElementsByTagName('package')[0]
+    except:
+        print ('Could not find root package node in ' + opffile)
+        sys.exit(1)
+    try:
+        metadata = opfroot.getElementsByTagName('metadata')[0]
+    except:
+        print ('Could not find metadata node in ' + opffile)
+        sys.exit(1)
+    if 'output' not in jsonkeys:
+        print(jsonfile + ' does not specify proper output file.')
+        sys.exit(1)
+    if type(jsondata.get('output')) != str:
+        print('Value for output key in ' + jsonfile + ' is not a string.')
+        sys.exit(1)
+    string = jsondata.get('output')
+    atom = os.path.join(cwd, string)
+    print("output: " + atom)
+    sys.exit(1)
+#    txt = os.path.basename(atom)
+#    jomstring = txt.split(".")[0]
+#    jomcatalogstring = "JoM"
+#    if '-noitalics' in jomstring:
+#        jomcatalogstring += '-noitalics'
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
     # root.setAttribute('xml:lang', xmllang)
@@ -33,21 +66,7 @@ def createEntry(atom, xml):
     #root.setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
     #root.setAttribute('xmlns:schema', 'http://schema.org/')
     # get the OPF dom
-    try:
-        opfdom = minidom.parse(xml)
-    except:
-        print ('Either ' + xml + ' does not exist or is not a valid XML file.')
-        sys.exit(1)
-    try:
-        opfroot = opfdom.getElementsByTagName('package')[0]
-    except:
-        print ('Could not find root package node.')
-        sys.exit(1)
-    try:
-        metadata = opfroot.getElementsByTagName('metadata')[0]
-    except:
-        print ('Could not find metadata node.')
-        sys.exit(1)
+    
     # get the title
     try:
         opftitle = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'title')[0]
@@ -204,10 +223,14 @@ def createEntry(atom, xml):
 def main():
     if len(sys.argv) != 3:
         showUsage()
-    opf = pathlib.Path(sys.argv[1])
+    cwd = os.getcwd()
+    opffile = pathlib.Path(sys.argv[1])
     if not opf.exists():
         showUsage()
-    createEntry(sys.argv[2], sys.argv[1])
+    jsonfile = pathlib.Path(sys.argv[2])
+    if not jsonfile.exists():
+        showUsage()
+    createEntry(cwd, jsonfile, opffile)
 
 if __name__ == '__main__':
     main()

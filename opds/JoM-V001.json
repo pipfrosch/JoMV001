@@ -1,0 +1,7 @@
+{
+  "output" : "opds/JoM-V001.atom",
+  "namespaces" : {
+    "dc"   : "http://purl.org/dc/terms/"
+  },
+  "id"     : "urn:uuid:bc955e92-abb4-4f8f-8929-839b7235a5ae"
+}
