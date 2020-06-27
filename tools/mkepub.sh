@@ -26,8 +26,8 @@ popd
 python3 tools/generateOPDS.py TheBook/EPUB/content.opf ${CWD}/opds/epub.json
 python3 tools/generateOPDS.py TheBook/EPUB/content.opf ${CWD}/opds/epub-noitalics.json
 
-#cat opds/JoM-V001.atom > ${CWD}/JoM-V001.atom
-#cat opds/JoM-V001-noitalics.atom > ${CWD}/JoM-V001-noitalics.atom
+cat opds/JoM-V001.atom > ${CWD}/JoM-V001.atom
+cat opds/JoM-V001-noitalics.atom > ${CWD}/JoM-V001-noitalics.atom
 
 exit 0
 rm -f ${CWD}/opds/epub-noitalics.json
