@@ -111,13 +111,13 @@ def createEntry(cwd, jsonfile, opffile):
         sys.exit(1)
     string = jsondata.get('output')
     atom = os.path.join(cwd, string)
-    if 'opbspath' not in jsonkeys:
-        print(jsonfile + ' does not specify proper opbspath.')
+    if 'opdspath' not in jsonkeys:
+        print(jsonfile + ' does not specify proper opdspath.')
         sys.exit(1)
-    if type(jsondata.get('opbspath')) != str:
-        print('Value for opbspath key in ' + jsonfile + ' is not a string.')
+    if type(jsondata.get('opdspath')) != str:
+        print('Value for opdspath key in ' + jsonfile + ' is not a string.')
         sys.exit(1)
-    obpspath = jsondata.get('obpspath')
+    obdspath = jsondata.get('obdspath')
 #    txt = os.path.basename(atom)
 #    jomstring = txt.split(".")[0]
 #    jomcatalogstring = "JoM"
@@ -148,7 +148,7 @@ def createEntry(cwd, jsonfile, opffile):
         sys.exit(1)
     validateUUID(jsondata.get('id'), jsonfile)
     stringlist = list(jsondata.get('id'))
-    if "-noitalics" in opbspath:
+    if '-noitalics' in opdspath:
         # indicate noitalics by changing first hex of fourth group to 9
         stringlist[28] = '9'
     string = ''.join(stringlist)

@@ -1,6 +1,6 @@
 {
   "output" : "opds/JoM-V001.atom",
-  "opbspath" : "/opds/JoM/JoM-V001.atom",
+  "opdspath" : "/opds/JoM/JoM-V001.atom",
   "namespaces" : {
     "dc"   : "http://purl.org/dc/terms/"
   },
