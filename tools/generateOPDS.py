@@ -34,7 +34,7 @@ def createEntry(cwd, jsonfile, opffile):
     try:
         opfdom = minidom.parse(opffile)
     except:
-        print (xml + ' is not a valid OPF file.')
+        print (opffile + ' is not a valid OPF file.')
         sys.exit(1)
     try:
         opfroot = opfdom.getElementsByTagName('package')[0]
