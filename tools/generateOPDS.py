@@ -225,7 +225,7 @@ def main():
         showUsage()
     cwd = os.getcwd()
     opffile = pathlib.Path(sys.argv[1])
-    if not opf.exists():
+    if not opffile.exists():
         showUsage()
     jsonfile = pathlib.Path(sys.argv[2])
     if not jsonfile.exists():
