@@ -4,5 +4,11 @@
   "namespaces" : {
     "dc"   : "http://purl.org/dc/terms/"
   },
-  "id"     : "urn:uuid:bc955e92-abb4-4f8f-8929-839b7235a5ae"
+  "id"     : "urn:uuid:bc955e92-abb4-4f8f-8929-839b7235a5ae",
+  "authors" : [
+    {
+      "name" : "American Society of Mammalogists",
+      "uri"  : "https://www.mammalogy.org/"
+    }
+  ]
 }
