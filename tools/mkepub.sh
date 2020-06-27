@@ -22,6 +22,8 @@ popd
 
 python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub.json
 python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub-noitalics.json
+
+exit 0
 rm -f ${CWD}/opds/epub-noitalics.json
 
 cd fonts
