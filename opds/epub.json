@@ -37,7 +37,7 @@
     },
     {
       "rel"   : "http://opds-spec.org/acquisition",
-      "href"  : "https://epub.pipfrosch.com/JoM/JoM-V001.kepub.epub"
+      "href"  : "https://epub.pipfrosch.com/JoM/JoM-V001.kepub.epub",
       "type"  : "application/epub+zip"
     },
     {
