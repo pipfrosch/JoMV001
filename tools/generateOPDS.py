@@ -231,7 +231,8 @@ def main():
     if len(sys.argv) != 3:
         showUsage()
     cwd = os.getcwd()
-    opffile = pathlib.Path(sys.argv[1])
+    #opffile = pathlib.Path(sys.argv[1])
+    opffile = os.path.join(cwd, sys.argv[1])
     if not opffile.exists():
         showUsage()
     jsonfile = pathlib.Path(sys.argv[2])
