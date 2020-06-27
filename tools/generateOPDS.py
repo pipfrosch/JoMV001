@@ -2,10 +2,15 @@
 import sys
 import os
 import pathlib
+import time
 import datetime
+import json
 import pytz
 from xml.dom import minidom
 from dateutil import parser
+
+os.environ['TZ'] = 'Europe/London'
+time.tzset()
 
 # check output with https://opds-validator.appspot.com/
 
