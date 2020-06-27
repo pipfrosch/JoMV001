@@ -228,21 +228,29 @@ def createEntry(cwd, jsonfile, opffile):
     node.appendChild(text)
     root.appendChild(node)
     # get the ePub unique identifier
-    if opfroot.hasAttribute('Lunique-identifier'):
+    if opfroot.hasAttribute('unique-identifier'):
         uniqueid = opfroot.getAttribute('unique-identifier')
     else:
         print('The root package element lacks a unique-identifier in ' + opffile)
         sys.exit(1)
-    try:
-        opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
-    except:
-        print ('Could not find the dc:identifier from OPF file.')
+    found = False
+    nodelist = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')
+    for node in nodelist:
+        if node.hasAttribute('id'):
+            nodeid = node.getAttribute('id')
+            if nodeid == uniqueid:
+                nodevalue = node.firstChild.nodeValue
+                text = mydom.createTextNode(nodevalue)
+                nnode = mydom.createElement('dc:identifier')
+                nnode.appendChild(text)
+                root.appendChild(nnode)
+                found = True
+                break
+    if not found:
+        print ('Could not find the unique identifier in ' + opffile)
         sys.exit(1)
-    nodevalue = opfuuid.firstChild.nodeValue
-    text = mydom.createTextNode(nodevalue)
-    node = mydom.createElement('dc:identifier')
-    node.appendChild(text)
-    root.appendChild(node)
+    print('Got to publisher')
+    sys.exit(1)
     # get publisher
     try:
         publisher = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'publisher')[0]
