@@ -271,7 +271,7 @@ def createEntry(cwd, jsonfile, opffile):
         node.appendChild(text)
         root.appendChild(node)
     # create summary
-    if 'ssummary' in jsonkeys:
+    if 'summary' in jsonkeys:
         string = jsondata.get('summary')
         if type(string) != str:
             print('The key "summary" does not have a string value in ' + jsonfile)
