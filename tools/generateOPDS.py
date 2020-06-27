@@ -263,7 +263,7 @@ def createEntry(cwd, jsonfile, opffile):
     # originally issued
     if 'issued' in jsonkeys:
         string = jsondata.get('issued')
-        if type(string) != dict:
+        if type(string) != str:
             print('The key issued does not have a string value in ' + jsonfile)
             sys.exit(1)
         text = mydom.createTextNode(string)
