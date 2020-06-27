@@ -75,6 +75,23 @@ def validateUUID(string, jsonfile):
         print('Error in ' + jsonfile + ': ' + 'first character of fourth block in ' + uuidstring + ' is not 8')
         sys.exit(1)
 
+def validateAuthors(authors, jsonfile):
+    if type(authors) != list:
+        print('Error in ' + jsonfile + ': The authors key in ' + jsonfile + ' does not point to a valid list.')
+        sys.exit(1)
+    for author in authors:
+        if type(author) != dict:
+            print('Error in ' + jsonfile + ': Some author entries in ' + jsonfile + ' are not dictionaries.')
+            sys.exit(1)
+        keys = author.keys()
+        if 'name' not in author:
+            print('Error in ' + jsonfile + ': Some author entries in ' + jsonfile + ' do not have a name key.')
+            sys.exit(1)
+        for key in keys:
+            if type(author.get(key)) != str:
+                print('Error in ' + jsonfile + ': Some author keys in ' + jsonfile + ' do not have string values.')
+                sys.exit(1)
+
 def standardizeDateTime(string):
     dto = parser.parse(string)
     return dto.strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -156,26 +173,36 @@ def createEntry(cwd, jsonfile, opffile):
     node = mydom.createElement('id')
     node.appendChild(text)
     root.appendChild(node)
-    # get the UUID
-    #try:
-    #    opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
-    #except:
-    #    print ("Could not find the dc:identifier from OPF file.")
-    #    sys.exit(1)
-    #nodevalue = 'urn:uuid:' + opfuuid.firstChild.nodeValue
-    print('made it to author')
-    sys.exit(1)
     # author
-    text = mydom.createTextNode('American Society of Mammalogists')
-    node = mydom.createElement('name')
-    node.appendChild(text)
-    author = mydom.createElement('author')
-    author.appendChild(node)
-    text = mydom.createTextNode('https://www.mammalogy.org/')
-    node = mydom.createElement('uri')
-    node.appendChild(text)
-    author.appendChild(node)
-    root.appendChild(author)
+    if 'authors' not in jsonkeys:
+        print(jsonfile + ' does not specify author(s).')
+        sys.exit(1)
+    authors = jsondata.get('authors')
+    validateAuthors(authors, jsonfile)
+    for author in authors:
+        authornode = mydom.createElement('author')
+        string = author.get('name')
+        text = mydom.createTextNode(string)
+        name = mydom.createElement('name')
+        name.appendChild(text)
+        authornode.appendChild(name)
+        if 'uri' in author.keys():
+            string = author.get('uri')
+            text = mydom.createTextNode(string)
+            uri = mydom.createElement('uri')
+            uri.appendChild(text)
+            authornode.appendChild(uri)
+        root.appendChild(authornode)
+#    text = mydom.createTextNode('American Society of Mammalogists')
+#    node = mydom.createElement('name')
+#    node.appendChild(text)
+#    author = mydom.createElement('author')
+#    author.appendChild(node)
+#    text = mydom.createTextNode('https://www.mammalogy.org/')
+#    node = mydom.createElement('uri')
+#    node.appendChild(text)
+#    author.appendChild(node)
+#    root.appendChild(author)
     # published date
     try:
         datenode = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'date')[0]
