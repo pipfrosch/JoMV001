@@ -202,20 +202,19 @@ def createEntry(cwd, jsonfile, opffile):
     root.appendChild(node)
     # modified date
     metalist = metadata.getElementsByTagName('meta')
-    i = 0
+    found = False
     for meta in metalist:
-        if meta.hasAttribute('property') and meta.getAttribute('property') == 'dc:modified':
-            print('HELLO')
+        if meta.hasAttribute('property') and meta.getAttribute('property') == 'dcterms:modified':
             nodevalue = meta.firstChild.nodeValue
             timestring = standardizeDateTime(nodevalue)
             text = mydom.createTextNode(timestring)
             node = mydom.createElement('updated')
             node.appendChild(text)
             root.appendChild(node)
-            i += 1
+            found = True
             break
-    if i == 0:
-        print ('Could not find the dc:modified meta tag in ' + opffile)
+    if not found:
+        print ('Could not find the dcterms:modified meta tag in ' + opffile)
         sys.exit(1)
     # get language
     try:
