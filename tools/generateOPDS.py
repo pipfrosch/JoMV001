@@ -264,23 +264,33 @@ def createEntry(cwd, jsonfile, opffile):
     if 'issued' in jsonkeys:
         string = jsondata.get('issued')
         if type(string) != str:
-            print('The key issued does not have a string value in ' + jsonfile)
+            print('The key "issued" does not have a string value in ' + jsonfile)
             sys.exit(1)
         text = mydom.createTextNode(string)
         node = mydom.createElement('dc:issued')
         node.appendChild(text)
         root.appendChild(node)
     # create summary
-    try:
-        description = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'description')[0]
-    except:
-        print ('Could not find dc:description from OPF file.')
-        sys.exit(1)
-    nodevalue = description.firstChild.nodeValue
-    text = mydom.createTextNode(nodevalue)
-    node = mydom.createElement('summary')
-    node.appendChild(text)
-    root.appendChild(node)
+    if 'ssummary' in jsonkeys:
+        string = jsondata.get('summary')
+        if type(string) != str:
+            print('The key "summary" does not have a string value in ' + jsonfile)
+            sys.exit(1)
+        text = mydom.createTextNode(string)
+        node = mydom.createElement('summary')
+        node.appendChild(text)
+        root.appendChild(node)
+    else:
+        try:
+            description = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'ddescription')[0]
+        except:
+            print ('Could not find dc:description in ' + opffile)
+            sys.exit(1)
+        nodevalue = description.firstChild.nodeValue
+        text = mydom.createTextNode(nodevalue)
+        node = mydom.createElement('summary')
+        node.appendChild(text)
+        root.appendChild(node)
     # TODO Category
     # Alternate View
     node = mydom.createElement('link')
