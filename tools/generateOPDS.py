@@ -271,7 +271,7 @@ def createEntry(cwd, jsonfile, opffile):
         node.appendChild(text)
         root.appendChild(node)
     # create summary
-    if 'summary' in jsonkeys:
+    if 'ssummary' in jsonkeys:
         string = jsondata.get('summary')
         if type(string) != str:
             print('The key "summary" does not have a string value in ' + jsonfile)
@@ -282,7 +282,7 @@ def createEntry(cwd, jsonfile, opffile):
         root.appendChild(node)
     else:
         try:
-            description = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'ddescription')[0]
+            description = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'description')[0]
         except:
             print ('Could not find dc:description in ' + opffile)
             sys.exit(1)
