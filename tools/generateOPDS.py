@@ -18,7 +18,7 @@ def standardizeDateTime(string):
     return dto.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 #def createEntry(atom, xml):
-def createEntry(cwd, jsonfile, opffile)
+def createEntry(cwd, jsonfile, opffile):
     try:
         with open(jsonfile) as f:
             jsondata = json.load(f)
