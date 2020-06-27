@@ -261,7 +261,7 @@ def createEntry(cwd, jsonfile, opffile):
     node.appendChild(text)
     root.appendChild(node)
     # originally issued
-    if issued in jsonkeys:
+    if 'issued' in jsonkeys:
         string = jsondata.get('issued')
         if type(string) != dict:
             print('The key issued does not have a string value in ' + jsonfile)
