@@ -6,6 +6,7 @@ import time
 import datetime
 import json
 import pytz
+import re
 from xml.dom import minidom
 from dateutil import parser
 
@@ -17,6 +18,62 @@ time.tzset()
 def showUsage():
     print ('Usage: ' + sys.argv[0] + ' path/to/contents.opf path/to/epub.json')
     sys.exit(1)
+
+def validateNamespaces(dictionary, jsonfile):
+    if type(dictionary) != dict:
+        print('The namespaces key in ' + jsonfile + ' does not point to a valid dictionary.')
+        sys.exit(1)
+    keylist = dictionary.keys()
+    pattern = re.compile(r'^[a-z]+$')
+    uripattern = re.compile(
+        r'^(?:http|ftp)s?://'
+        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'
+        r'localhost|'
+        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
+        r'(?::\d+)?'
+        r'(?:/?|[/?]\S+)$', re.IGNORECASE)
+    for ns in keylist:
+        match = re.search(pattern, ns)
+        if not match:
+            print('Error in ' + jsonfile + ': A namespaces key should only contain lower case letters.')
+            sys.exit(1)
+        if len(ns) > 12:
+            print('Error in ' + jsonfile + ': A namespaces key really should not be more than twelve characters in length.')
+            sys.exit(1)
+        uri = dictionary.get(ns)
+        if type(uri) != str:
+            print('Error in ' + jsonfile + ': The value associated with the namespaces key ' + ns + ' is not a string.')
+            sys.exit(1)
+        match = re.search(uripattern, uri)
+        if not match:
+            print('Error in ' + jsonfile + ': The value associated with the namespaces key ' + ns + ' is not a valid uri.')
+            sys.exit(1)
+
+# Pipfrosch Press only uses Version 4 UUID
+def validateUUID(string, jsonfile):
+    if type(string) != str:
+        print('Error in ' + jsonfile + ': ' + string + ' is not a valid UUID urn string.')
+        sys.exit(1)
+    if len(string) != 45:
+        print('Error in ' + jsonfile + ': ' + string + ' is not a valid UUID urn string.')
+        sys.exit(1)
+    header = string[0:9]
+    if header != 'urn:uuid:':
+        print('Error in ' + jsonfile + ': ' + string + ' is not a valid UUID urn string.')
+        sys.exit(1)
+    uuidstring = string[9:]
+    pattern = re.compile(r'^[\da-f]{8}-([\da-f]{4}-){3}[\da-f]{12}$', re.IGNORECASE)
+    match = re.search(pattern, uuidstring)
+    if not match:
+        print('Error in ' + jsonfile + ': ' + string + ' is not a valid UUID urn string.')
+        sys.exit(1)
+    uuidlist = list(uuidstring)
+    if uuidlist[14] != '4':
+        print('Error in ' + jsonfile + ': ' + uuidstring + ' is not a valid Version 4 UUID.')
+        sys.exit(1)
+    if uuidlist[19] != '8':
+        print('Error in ' + jsonfile + ': ' + 'first character of fourth block in ' + uuidstring + ' is not 8')
+        sys.exit(1)
 
 def standardizeDateTime(string):
     dto = parser.parse(string)
@@ -54,8 +111,13 @@ def createEntry(cwd, jsonfile, opffile):
         sys.exit(1)
     string = jsondata.get('output')
     atom = os.path.join(cwd, string)
-    print("output: " + atom)
-    sys.exit(1)
+    if 'opbspath' not in jsonkeys:
+        print(jsonfile + ' does not specify proper opbspath.')
+        sys.exit(1)
+    if type(jsondata.get('opbspath')) != str:
+        print('Value for opbspath key in ' + jsonfile + ' is not a string.')
+        sys.exit(1)
+    obpspath = jsondata.get('obpspath')
 #    txt = os.path.basename(atom)
 #    jomstring = txt.split(".")[0]
 #    jomcatalogstring = "JoM"
@@ -63,15 +125,13 @@ def createEntry(cwd, jsonfile, opffile):
 #        jomcatalogstring += '-noitalics'
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
-    # root.setAttribute('xml:lang', xmllang)
     root.setAttribute('xmlns', 'http://www.w3.org/2005/Atom')
-    #root.setAttribute('xmlns:thr', 'http://purl.org/syndication/thread/1.0')
-    root.setAttribute('xmlns:dc', 'http://purl.org/dc/terms/')
-    #root.setAttribute('xmlns:opds', 'http://opds-spec.org/2010/catalog')
-    #root.setAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-    #root.setAttribute('xmlns:schema', 'http://schema.org/')
-    # get the OPF dom
-    
+    if 'namespaces' in jsonkeys:
+        namespaces = jsondata.get('namespaces')
+        validateNamespaces(namespaces, jsonfile)
+        nskeys = namespaces.keys()
+        for ns in nskeys:
+            root.setAttribute('xmlns:' + ns, namespaces.get(ns))
     # get the title
     try:
         opftitle = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'title')[0]
@@ -83,6 +143,19 @@ def createEntry(cwd, jsonfile, opffile):
     node = mydom.createElement('title')
     node.appendChild(text)
     root.appendChild(node)
+    if 'id' not in jsonkeys:
+        print(jsonfile + ' does not specify id.')
+        sys.exit(1)
+    validateUUID(jsondata.get('id'), jsonfile)
+    stringlist = list(jsondata.get('id'))
+    if "-noitalics" in opbspath:
+        # indicate noitalics by changing first hex of fourth group to 9
+        stringlist[28] = '9'
+    string = ''.join(stringlist)
+    text = mydom.createTextNode(string)
+    node = mydom.createElement('id')
+    node.appendChild(text)
+    root.appendChild(node)
     # get the UUID
     #try:
     #    opfuuid = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'identifier')[0]
@@ -90,14 +163,8 @@ def createEntry(cwd, jsonfile, opffile):
     #    print ("Could not find the dc:identifier from OPF file.")
     #    sys.exit(1)
     #nodevalue = 'urn:uuid:' + opfuuid.firstChild.nodeValue
-    stringlist = list('urn:uuid:bc955e92-abb4-4f8f-8929-839b7235a5ae')
-    if "-noitalics" in jomstring:
-        stringlist[28] = "9"
-    string = ''.join(stringlist)
-    text = mydom.createTextNode(string)
-    node = mydom.createElement('id')
-    node.appendChild(text)
-    root.appendChild(node)
+    print('made it to author')
+    sys.exit(1)
     # author
     text = mydom.createTextNode('American Society of Mammalogists')
     node = mydom.createElement('name')
