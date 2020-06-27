@@ -202,7 +202,7 @@ def createEntry(cwd, jsonfile, opffile):
     root.appendChild(node)
     # modified date
     metalist = metadata.getElementsByTagName('meta')
-    found = False
+    i = 0
     for meta in metalist:
         if meta.hasAttribute('property') and meta.getAttribute('property') == 'dc:modified':
             nodevalue = meta.firstChild.nodeValue
@@ -211,9 +211,9 @@ def createEntry(cwd, jsonfile, opffile):
             node = mydom.createElement('updated')
             node.appendChild(text)
             root.appendChild(node)
-            found = True
+            i += 1
             break
-    if not found:
+    if i == 0:
         print ('Could not find the dc:modified meta tag in ' + opffile)
         sys.exit(1)
     # get language
