@@ -255,7 +255,7 @@ def createEntry(cwd, jsonfile, opffile):
     try:
         publisher = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'publisher')[0]
     except:
-        print ('Could not find the dc:publisher from OPF file.')
+        print ('Could not find the dc:publisher in ' + opffile)
         sys.exit(1)
     nodevalue = publisher.firstChild.nodeValue
     text = mydom.createTextNode(nodevalue)
@@ -263,10 +263,15 @@ def createEntry(cwd, jsonfile, opffile):
     node.appendChild(text)
     root.appendChild(node)
     # originally issued
-    text = mydom.createTextNode('1919–1920')
-    node = mydom.createElement('dc:issued')
-    node.appendChild(text)
-    root.appendChild(node)
+    if issued in jsonkeys:
+        string = jsondata.get('issued')
+        if type(string) != dict:
+            print('The key issued does not have a string value in ' + jsonfile)
+            sys.exit(1)
+        text = mydom.createTextNode(string)
+        node = mydom.createElement('dc:issued')
+        node.appendChild(text)
+        root.appendChild(node)
     # create summary
     try:
         description = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'description')[0]
