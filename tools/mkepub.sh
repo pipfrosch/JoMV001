@@ -12,24 +12,25 @@ cd JoMV001
 git checkout Alpha2
 
 cd TheBook/EPUB
-
 python3 ../../tools/updateTimestamp.py content.opf
+cd ../..
 
 #generate atom file
 pushd ${CWD}/opds
 cat epub.json |sed -e s?"\.atom"?"-noitalics.atom"?g > epub-noitalics.json
 popd
 
+
 python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub.json
 python3 ../../tools/generateOPDS.py content.opf ${CWD}/opds/epub-noitalics.json
 
-#cat ../../opds/JoM-V001.atom > ${CWD}/JoM-V001.atom
-#cat ../../opds/JoM-V001-noitalics.atom > ${CWD}/JoM-V001-noitalics.atom
+#cat opds/JoM-V001.atom > ${CWD}/JoM-V001.atom
+#cat opds/JoM-V001-noitalics.atom > ${CWD}/JoM-V001-noitalics.atom
 
 exit 0
 rm -f ${CWD}/opds/epub-noitalics.json
 
-cd fonts
+cd TheBook/EPUB/fonts
 rm -f .gitignore
 cp -p /usr/local/ePubFonts/ClearSans-BoldItalic-wlatin.ttf .
 cp -p /usr/local/ePubFonts/ClearSans-Bold-wlatin.ttf .
