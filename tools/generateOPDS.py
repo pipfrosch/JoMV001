@@ -204,7 +204,7 @@ def createEntry(cwd, jsonfile, opffile):
     metalist = metadata.getElementsByTagName('meta')
     found = False
     for meta in metalist:
-        if meta.hasAttribute('property') and meta.getAttribute('property') == 'dc:mmodified':
+        if meta.hasAttribute('property') and meta.getAttribute('property') == 'dc:modified':
             nodevalue = meta.firstChild.nodeValue
             timestring = standardizeDateTime(nodevalue)
             text = mydom.createTextNode(timestring)
