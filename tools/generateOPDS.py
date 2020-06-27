@@ -117,7 +117,7 @@ def createEntry(cwd, jsonfile, opffile):
     if type(jsondata.get('opdspath')) != str:
         print('Value for opdspath key in ' + jsonfile + ' is not a string.')
         sys.exit(1)
-    obdspath = jsondata.get('obdspath')
+    opdspath = jsondata.get('opdspath')
 #    txt = os.path.basename(atom)
 #    jomstring = txt.split(".")[0]
 #    jomcatalogstring = "JoM"
