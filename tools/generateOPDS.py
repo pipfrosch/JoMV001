@@ -146,13 +146,6 @@ def createEntry(cwd, jsonfile, opffile):
         sys.exit(1)
     string = jsondata.get('output')
     atom = os.path.join(cwd, string)
-    if 'opdspath' not in jsonkeys:
-        print(jsonfile + ' does not specify proper opdspath.')
-        sys.exit(1)
-    if type(jsondata.get('opdspath')) != str:
-        print('Value for opdspath key in ' + jsonfile + ' is not a string.')
-        sys.exit(1)
-    opdspath = jsondata.get('opdspath')
     mydom = minidom.parseString('<entry/>')
     root = mydom.getElementsByTagName('entry')[0]
     root.setAttribute('xmlns', 'http://www.w3.org/2005/Atom')
@@ -178,7 +171,7 @@ def createEntry(cwd, jsonfile, opffile):
         sys.exit(1)
     validateUUID(jsondata.get('id'), jsonfile)
     stringlist = list(jsondata.get('id'))
-    if '-noitalics' in opdspath:
+    if '-noitalics' in atom:
         # indicate noitalics by changing first hex of fourth group to 9
         stringlist[28] = '9'
     string = ''.join(stringlist)

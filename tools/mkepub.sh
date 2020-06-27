@@ -29,7 +29,6 @@ python3 tools/generateOPDS.py TheBook/EPUB/content.opf ${CWD}/opds/epub-noitalic
 cat opds/JoM-V001.atom > ${CWD}/opds/JoM-V001.atom
 cat opds/JoM-V001-noitalics.atom > ${CWD}/opds/JoM-V001-noitalics.atom
 
-exit 0
 rm -f ${CWD}/opds/epub-noitalics.json
 
 cd TheBook/EPUB/fonts
