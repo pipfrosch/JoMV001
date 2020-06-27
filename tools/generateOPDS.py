@@ -249,8 +249,6 @@ def createEntry(cwd, jsonfile, opffile):
     if not found:
         print ('Could not find the unique identifier in ' + opffile)
         sys.exit(1)
-    print('Got to publisher')
-    sys.exit(1)
     # get publisher
     try:
         publisher = opfdom.getElementsByTagNameNS('http://purl.org/dc/elements/1.1/', 'publisher')[0]
