@@ -31,8 +31,6 @@ def createEntry(cwd, jsonfile, opffile):
         print(jsonfile + ' does not appear to be valid JSON.')
         sys.exit(1)
     jsonkeys = jsondata.keys()
-    print(opffile)
-    sys.exit(1)
     try:
         opfdom = minidom.parse(opffile)
     except:
@@ -231,12 +229,11 @@ def main():
     if len(sys.argv) != 3:
         showUsage()
     cwd = os.getcwd()
-    #opffile = pathlib.Path(sys.argv[1])
     opffile = os.path.join(cwd, sys.argv[1])
     if not os.path.exists(opffile):
         showUsage()
-    jsonfile = pathlib.Path(sys.argv[2])
-    if not jsonfile.exists():
+    jsonfile = os.path.join(cwd, sys.argv[2])
+    if not os.path.exists(jsonfile):
         showUsage()
     createEntry(cwd, jsonfile, opffile)
 
