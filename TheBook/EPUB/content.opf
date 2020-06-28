@@ -37,6 +37,9 @@
     <meta property="role" refines="author7" scheme="marc:relators">ctb</meta>
     <dc:contributor id="author8">Arthur H. Howell</dc:contributor>
     <meta property="role" refines="author8" scheme="marc:relators">ctb</meta>
+    <dc:contributor id="author9">Ernest T. Seton</dc:contributor>
+    <meta property="role" refines="author9" scheme="marc:relators">ctb</meta>
+    <meta property="role" refines="author9" scheme="marc:relators">ill</meta>
     
     <!-- visual -->
     <dc:contributor id="cover0">Tyus D. Williams</dc:contributor>
@@ -123,6 +126,8 @@
   <!-- 1920 February Issue -->
     <item href="1920Feb/IssueCover.xhtml" id="feb1920.cover" media-type="application/xhtml+xml" properties="svg"/>
     <item href="1920Feb/asm.xhtml" id="feb1920.asm" media-type="application/xhtml+xml"/>
+    <item href="1920Feb/IssueToC.xhtml" id="feb1920.ToC" media-type="application/xhtml+xml"/>
+    <item href="1920Feb/migrations_graysquirrel.xhtml" id="feb1920.migrations-graysquirrel" media-type="application/xhtml+xml"/>
   
   <!-- 1920 May Issue -->
     <item href="1920May/IssueCover.xhtml" id="may1920.cover" media-type="application/xhtml+xml" properties="svg"/>
@@ -188,6 +193,8 @@
 
 
     <itemref idref="feb1920.cover"/>
+    <itemref idref="feb1920.ToC"/>
+    <itemref idref="feb1920.migrations-graysquirrel"/>
     <itemref idref="feb1920.asm"/>
     
     <itemref idref="may1920.cover"/>
