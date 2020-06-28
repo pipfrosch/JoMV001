@@ -1,0 +1,33 @@
+{
+  "target"   : "TheBook/EPUB/apx/bibliography.xhtml"
+  "sections" : {
+    "A" : [
+      {
+        "id"     : "allen-1895",
+        "authors" : [
+          "Allen, Joel A."
+        ]
+        "year" : "1895",
+        "article" : "On the names of mammals given by Kerr in his &#8216;Animal Kingdom,&#8217; published in 1792.",
+        "journal" : {
+          "title"  : "Bulletin of the American Museum of Natural History",
+          "issue"  : "Volume 7, Article 5",
+          "date"   : "1895-06-20",
+          "pages"  : "179&#8211;192",
+          "handle" : "/2246/1034"
+        }
+        "citedby" : [
+          {
+            "name"    : "Osgood, Wilfred H.",
+            "linkhref" : "../1919Nov/sa_mammals.xhtml#sa05.desc",
+            "linktext" : "34"
+          }
+        ]
+      },
+      
+    ],
+    "B" : [
+    
+    ],
+  }
+}
