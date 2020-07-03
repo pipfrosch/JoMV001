@@ -1,5 +1,36 @@
 #!/bin/bash
 
+function getfonts {
+  GITDIR="$1"
+  EPUBDIR="$2"
+  pushd ${GITDIR}
+  if [ ! -f fonts.sha256.txt ]; then
+    echo "No fonts checksum"
+    exit 1
+  fi
+  cat fonts.sha256.txt |cut -d' ' -f3 |while read fontfile; do
+    if [ ! -f ${fontfile} ]; then
+      curl -O https://misc.pipfrosch.com/ePubFonts/${fontfile}
+    fi
+  done
+  popd
+  pushd ${EPUBDIR}
+  if [ ! -f fonts.sha256.txt ]; then
+    echo "No fonts checksum"
+    exit 1
+  fi
+  cat fonts.sha256.txt |cut -d' ' -f3 |while read fontfile; do
+    cp -p ${GITDIR}/${fontfile} .
+  done
+  sha256sum -c fonts.sha256.txt
+  if [ $? -ne 0 ]; then
+    echo "Font checksum problem"
+    exit 1;
+  fi
+  rm -f fonts.sha256.txt .gitignore
+  popd
+}
+
 CWD=`pwd`
 
 TMP=`mktemp -d /tmp/JOMV001.XXXXXXXX`
@@ -10,6 +41,8 @@ git clone https://github.com/pipfrosch/JoMV001.git
 cd JoMV001
 # Switch to Alpha2 branch
 git checkout Alpha2
+
+getfonts ${CWD}/TheBook/EPUB/fonts ${TMP}/JoMV001/TheBook/EPUB/fonts
 
 cd TheBook/EPUB
 python3 ../../tools/updateTimestamp.py content.opf
@@ -31,18 +64,7 @@ cat opds/JoM-V001-noitalics.atom > ${CWD}/opds/JoM-V001-noitalics.atom
 
 rm -f ${CWD}/opds/epub-noitalics.json
 
-cd TheBook/EPUB/fonts
-rm -f .gitignore
-cp -p /usr/local/ePubFonts/ClearSans-BoldItalic-wlatin.ttf .
-cp -p /usr/local/ePubFonts/ClearSans-Bold-wlatin.ttf .
-cp -p /usr/local/ePubFonts/ClearSans-Italic-wlatin.ttf .
-cp -p /usr/local/ePubFonts/ClearSans-Regular-wlatin.ttf .
-cp -p /usr/local/ePubFonts/ComicNeue-Bold-wlatin.otf .
-cp -p /usr/local/ePubFonts/ComicNeue-Regular-wlatin.otf .
-#cp -p /usr/local/ePubFonts/DancingScript-Regular.otf .
-cp -p /usr/local/ePubFonts/FiraMono-Medium-wlatin.ttf .
-cp -p /usr/local/ePubFonts/FiraMono-Bold-wlatin.ttf .
-cd ../..
+cd TheBook
 
 echo -n application/epub+zip >mimetype
 
